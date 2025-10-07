@@ -3,124 +3,287 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Contacto</title>
-  <link rel="icon" type="image/png" href="Icono.png">
+  <title>Formulario de Contacto | StockMaster</title>
+  <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <header>
-        <h1>Contáctanos</h1>
-    </header>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
-                <h3><i class="fas fa-box"></i> StockMaster</h3>
+<body class="contact-body">
+
+  <header class="contact-header">
+    <h1 class="contact-header-title">Contáctanos</h1>
+  </header>
+
+  <nav class="contact-navbar navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <h3><i class="fas fa-box"></i> StockMaster</h3>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a href="#" class="nav-link contact-nav-link" onclick="volverSegunOrigen(event)">
+              <i class="fas fa-arrow-left"></i> Volver
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a href="#" class="nav-link" onclick="volverSegunOrigen(event)">
-                    <i class="fas fa-arrow-left"></i> Volver
-                  </a>
-                </li>
-                <li class="nav-item"><a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
-                <li class="nav-item"><a class="nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
-                <li class="nav-item"><a class="nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
-                <li class="nav-item"><a class="nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
-                <li class="nav-item"><a class="nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
-              </ul>
-            </div>
+          </li>
+          <li class="nav-item"><a class="nav-link contact-nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+          <li class="nav-item"><a class="nav-link contact-nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+          <li class="nav-item"><a class="nav-link contact-nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
+          <li class="nav-item"><a class="nav-link contact-nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+          <li class="nav-item"><a class="nav-link contact-nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact-container">
+    <div class="contact-card">
+      
+      <div class="contact-header-icon">
+        <i class="fas fa-envelope"></i>
+      </div>
+
+      <h2 class="contact-title">Solicita Información</h2>
+      <p class="contact-subtitle">
+        Selecciona los servicios, planes o soporte que necesites y completa tus datos. 
+        Nos pondremos en contacto contigo lo antes posible.
+      </p>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        
+        <div class="contact-section-header">
+          <i class="fas fa-user-circle me-2"></i>Información Personal
         </div>
-    </nav>
 
+        <div class="contact-form-row">
+          <div class="contact-form-group">
+            <label for="nombre" class="contact-form-label">
+              <i class="fas fa-user me-2"></i>Nombre completo <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="nombre" 
+              name="nombre" 
+              class="contact-form-input" 
+              placeholder="Escribe tu nombre" 
+              required>
+          </div>
 
-  <section class="form-container">
-    <h2>Solicita Información</h2>
-    <p class="form-subtitle">Selecciona los servicios, planes o soporte que necesites y completa tus datos.</p>
+          <div class="contact-form-group">
+            <label for="email" class="contact-form-label">
+              <i class="fas fa-envelope me-2"></i>Correo electrónico <span class="text-danger">*</span>
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="contact-form-input" 
+              placeholder="ejemplo@correo.com" 
+              required>
+          </div>
+        </div>
 
-    <form class="contact-form">
-      <div class="form-group">
-        <label for="nombre"><i class="fas fa-user"></i> Nombre completo</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
-      </div>
+        <div class="contact-form-row">
+          <div class="contact-form-group">
+            <label for="telefono" class="contact-form-label">
+              <i class="fas fa-phone me-2"></i>Teléfono
+            </label>
+            <input 
+              type="tel" 
+              id="telefono" 
+              name="telefono" 
+              class="contact-form-input" 
+              placeholder="3007217921">
+          </div>
 
-      <div class="form-group 2">
-        <label for="email"><i class="fas fa-envelope"></i> Correo electrónico</label>
-        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-      </div>
+          <div class="contact-form-group">
+            <label for="sede" class="contact-form-label">
+              <i class="fas fa-map-marker-alt me-2"></i>Seleccione su Ciudad <span class="text-danger">*</span>
+            </label>
+            <select id="sede" name="sede" class="contact-form-select" required>
+              <option value="">-- Seleccione --</option>
+              <option value="Bog">🏙️ Bogotá</option>
+              <option value="Quilla">🌴 Barranquilla</option>
+              <option value="Car">🏖️ Cartagena</option>
+              <option value="Med">🏔️ Medellín</option>
+              <option value="Cal">☀️ Cali</option>
+            </select>
+          </div>
+        </div>
 
-      <div class="form-group 2">
-        <label for="telefono"><i class="fas fa-phone"></i> Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" placeholder="3007217921">
-      </div>
-      <div class="form-group 2">
-        <label for="sede">Seleccione su Ciudad</label>
-        <select id="sede" name="sede" required>
-          <option value="Bog">Bogotá</option>
-          <option value="Quilla">Barranquilla</option>
-          <option value="Car">Cartagena</option>
-          <option value="Med">Medellín</option>
-          <option value="Cal">Cali</option>
-        </select>
-      </div>
+        <div class="contact-section-header">
+          <i class="fas fa-cogs me-2"></i>Servicios
+        </div>
+        <div class="contact-options-grid">
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Inventario">
+            <div class="contact-option-content">
+              <i class="fas fa-boxes-stacked"></i>
+              <span>Gestión de Inventario</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Consultoría">
+            <div class="contact-option-content">
+              <i class="fas fa-lightbulb"></i>
+              <span>Consultoría Tecnológica</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Soporte">
+            <div class="contact-option-content">
+              <i class="fas fa-headset"></i>
+              <span>Soporte Técnico</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Web">
+            <div class="contact-option-content">
+              <i class="fas fa-code"></i>
+              <span>Desarrollo Web</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Capacitación">
+            <div class="contact-option-content">
+              <i class="fas fa-graduation-cap"></i>
+              <span>Capacitación</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Datos">
+            <div class="contact-option-content">
+              <i class="fas fa-chart-line"></i>
+              <span>Análisis de Datos</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Integración">
+            <div class="contact-option-content">
+              <i class="fas fa-plug"></i>
+              <span>Integración de Sistemas</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Seguridad">
+            <div class="contact-option-content">
+              <i class="fas fa-shield-alt"></i>
+              <span>Seguridad Cibernética</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="servicios" value="Ninguno">
+            <div class="contact-option-content">
+              <i class="fas fa-times-circle"></i>
+              <span>Ninguno</span>
+            </div>
+          </label>
+        </div>
 
-      <h3 class="form-category">Servicios</h3>
-      <div class="options-grid">
-        <label class="option-card"><input type="radio" name="servicios" value="Inventario"><i class="fas fa-boxes-stacked"></i> Gestión de Inventario</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Consultoría"><i class="fas fa-lightbulb"></i> Consultoría Tecnológica</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Soporte"><i class="fas fa-headset"></i> Soporte Técnico</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Web"><i class="fas fa-code"></i> Desarrollo Web</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Capacitación"><i class="fas fa-graduation-cap"></i> Capacitación</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Datos"><i class="fas fa-chart-line"></i> Análisis de Datos</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Integración"><i class="fas fa-plug"></i> Integración de Sistemas</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Seguridad"><i class="fas fa-shield-alt"></i> Seguridad Cibernética</label>
-        <label class="option-card"><input type="radio" name="servicios" value="Ninguno"><i class="fas fa-cancel"></i> Ninguno</label>
+        <div class="contact-section-header">
+          <i class="fas fa-rocket me-2"></i>Planes
+        </div>
+        <div class="contact-options-grid contact-options-grid-small">
+          <label class="contact-option-card">
+            <input type="radio" name="plan" value="Básico">
+            <div class="contact-option-content">
+              <i class="fas fa-seedling"></i>
+              <span>Básico</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="plan" value="Profesional">
+            <div class="contact-option-content">
+              <i class="fas fa-rocket"></i>
+              <span>Profesional</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="plan" value="Empresarial">
+            <div class="contact-option-content">
+              <i class="fas fa-building"></i>
+              <span>Empresarial</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="plan" value="Notengo">
+            <div class="contact-option-content">
+              <i class="fas fa-times-circle"></i>
+              <span>No tengo</span>
+            </div>
+          </label>
+        </div>
 
-      </div>
+        <div class="contact-section-header">
+          <i class="fas fa-headset me-2"></i>Soporte
+        </div>
+        <div class="contact-options-grid contact-options-grid-small">
+          <label class="contact-option-card">
+            <input type="radio" name="soporte" value="Tecnico">
+            <div class="contact-option-content">
+              <i class="fas fa-screwdriver-wrench"></i>
+              <span>Soporte Técnico</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="soporte" value="24/7">
+            <div class="contact-option-content">
+              <i class="fas fa-headset"></i>
+              <span>Atención 24/7</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="soporte" value="Capacitación">
+            <div class="contact-option-content">
+              <i class="fas fa-chalkboard-teacher"></i>
+              <span>Capacitación</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="soporte" value="Consultoría">
+            <div class="contact-option-content">
+              <i class="fas fa-user-tie"></i>
+              <span>Consultoría</span>
+            </div>
+          </label>
+          <label class="contact-option-card">
+            <input type="radio" name="soporte" value="Ninguno">
+            <div class="contact-option-content">
+              <i class="fas fa-times-circle"></i>
+              <span>Ninguno u otro</span>
+            </div>
+          </label>
+        </div>
 
-      <h3 class="form-category">Planes</h3>
-      <div class="options-grid">
-        <label class="option-card"><input type="radio" name="plan" value="Básico"><i class="fas fa-seedling"></i> Básico</label>
-        <label class="option-card"><input type="radio" name="plan" value="Profesional"><i class="fas fa-rocket"></i> Profesional</label>
-        <label class="option-card"><input type="radio" name="plan" value="Empresarial"><i class="fas fa-building"></i> Empresarial</label>
-        <label class="option-card"><input type="radio" name="plan" value="Notengo"><i class="fas fa-cancel"></i> No tengo</label>
+        <div class="contact-form-group">
+          <label for="mensaje" class="contact-form-label">
+            <i class="fas fa-comment-dots me-2"></i>Mensaje adicional
+          </label>
+          <textarea 
+            id="mensaje" 
+            name="mensaje" 
+            rows="4" 
+            class="contact-form-textarea" 
+            placeholder="Escribe aquí más detalles de lo que necesitas..."></textarea>
+        </div>
 
-      </div>
+        <div class="contact-policy-box">
+          <input type="checkbox" id="politica" name="politica" class="contact-checkbox" required>
+          <label for="politica" class="contact-policy-label">
+            Acepto la <a href="protecciondedatos.html" target="_blank">Política de Protección de Datos</a>.
+          </label>
+        </div>
 
-      <h3 class="form-category">Soporte</h3>
-      <div class="options-grid">
-        <label class="option-card"><input type="radio" name="soporte" value="Tecnico"><i class="fas fa-screwdriver-wrench"></i> Soporte Técnico</label>
-        <label class="option-card"><input type="radio" name="soporte" value="24/7"><i class="fas fa-headset"></i> Atención 24/7</label>
-        <label class="option-card"><input type="radio" name="soporte" value="Capacitación"><i class="fas fa-chalkboard-teacher"></i> Capacitación</label>
-        <label class="option-card"><input type="radio" name="soporte" value="Consultoría"><i class="fas fa-user-tie"></i> Consultoría</label>
-        <label class="option-card"><input type="radio" name="soporte" value="Ninguno"><i class="fas fa-cancel"></i> Ninguno u otro</label>
-
-      </div>
-
-      <div class="form-group 2">
-        <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje adicional</label>
-        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Escribe aquí más detalles de lo que necesitas..."></textarea>
-      </div>
-
-<div class="form-group policy">
-<div class="form-group policy">
-  <input type="checkbox" id="politica" name="politica" required>
-  <label for="politica">
-    Acepto la <a href="protecciondedatos.html" target="_blank">Política de Protección de Datos</a>.
-  </label>
-</div>
-</div>
-</div>
-
-      <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Solicitud</button>
-    </form>
+        <button type="submit" class="contact-btn-submit">
+          <i class="fas fa-paper-plane me-2"></i> Enviar Solicitud
+        </button>
+      </form>
+    </div>
   </section>
-
 
 <footer class="site-footer">
   <div class="footer-container">
@@ -177,7 +340,7 @@
         <li><a href="sobrenosotros.html">Quiénes Somos</a></li>
         <li><a href="sobrenosotros.html">Misión y Visión</a></li>
         <li><a href="sobrenosotros.html#historia">Nuestra Historia</a></li>
-        <li><a href="sobrenosotros.html#equipo">Equipo</a></li>
+        <li><a href="nuestroequipo.html">Equipo</a></li>
       </ul>
     </div>
 
@@ -214,23 +377,22 @@
   </div>
 </footer>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-
-<script>
-  function volverSegunOrigen(e) {
-    e.preventDefault();
-
-    const referrer = document.referrer;
-
-    if (referrer && referrer !== window.location.href) {
-      window.location.href = referrer;
-    } else {
-      window.location.href = "index 1.html";
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    function volverSegunOrigen(e) {
+      e.preventDefault();
+      const referrer = document.referrer;
+      if (referrer && referrer !== window.location.href) {
+        window.location.href = referrer;
+      } else {
+        window.location.href = "index 1.html";
+      }
     }
-  }
-</script>
-
-
-
+  </script>
+</body>
 </html>
+
+
+
+
