@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link rel="icon" type="image/png" href="Icono.png">
+    <meta name="description" content="Descubre artículos expertos en gestión de inventarios, optimización logística y tips para PYMES. Mantente actualizado con StockMaster.">
+    <meta name="keywords" content="blog StockMaster, gestión inventarios, logística, tips empresariales, optimización stock">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index 1.html">
+                <h3><i class="fas fa-box"></i> StockMaster</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="#" class="nav-link" onclick="volverSegunOrigen(event)">
+                    <i class="fas fa-arrow-left"></i> Volver
+                  </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
+                <li class="nav-item"><a class="nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="blog-hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h1 class="hero-title"><i class="fas fa-newspaper"></i> Blog de StockMaster</h1>
+                        <p class="hero-subtitle">Explora insights expertos sobre gestión de inventarios, logística y estrategias para PYMES. Mantente al día con las mejores prácticas del sector.</p>
+                        <div class="search-bar">
+                            <div class="input-group">
+                                <input type="search" class="form-control search-input" placeholder="Buscar artículos por tema..." aria-label="Buscar en el blog">
+                                <button class="btn search-btn" type="button" aria-label="Buscar"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="hero-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQm8H90sU3YbEwnSwicBkOB4Bihd4C-CDwcGA&s" alt="Ilustración de blog sobre gestión de inventarios" class="img-fluid rounded">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="blog-container">
+            <div class="row">
+
+                <div class="col-lg-8 blog-posts">
+                    <div class="posts-grid">
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://blog.superventamovil.com/hubfs/C%C3%B3mo%20gestionar%20el%20inventario%20de%20manera%20efectiva%20%28Gu%C3%ADa%202024%29.webp" alt="Cómo optimizar inventarios en 2024" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 15 Oct 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Kevin Méndez</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-chart-bar"></i> Cómo Optimizar tu Inventario en 2024: Estrategias Prácticas</h3>
+                                    <p class="post-excerpt">Descubre técnicas avanzadas para reducir costos y mejorar la eficiencia en la gestión de stock. Aprende a usar herramientas como StockMaster para predecir demandas y evitar sobrestock.</p>
+                                    <a href="blog/post1.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://invoicexpress.com/wp-content/uploads/2024/04/comunicacao-de-inventarios-a-at-em-2024-1024x535.png" alt="Errores comunes en gestión de stock" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 10 Oct 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Equipo StockMaster</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-exclamation-triangle"></i> 5 Errores Comunes en la Gestión de Stock y Cómo Evitarlos</h3>
+                                    <p class="post-excerpt">Identifica pitfalls típicos en inventarios y aplica soluciones simples para mantener tu negocio fluido. Incluye casos reales de PYMES en Colombia.</p>
+                                    <a href="blog/post2.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://www.comparapps.com/wp-content/uploads/2022/02/sistemas-de-inventarios.png" alt="Automatización en logística" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 05 Oct 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Ana López</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-robot"></i> Beneficios de la Automatización en Logística para PYMES</h3>
+                                    <p class="post-excerpt">Explora cómo la IA y software como StockMaster pueden transformar tu cadena de suministro, reduciendo tiempos y errores en un 40%.</p>
+                                    <a href="blog/post3.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://www.xamai.com/hubfs/Miniaturas%20junio%20(2)-3.webp" alt="Tendencias en inventarios" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 01 Oct 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Kevin Méndez</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-trending-up"></i> Tendencias en Gestión de Inventarios para 2025</h3>
+                                    <p class="post-excerpt">Analizamos el impacto de la sostenibilidad y el e-commerce en el control de stock. Consejos accionables para adaptarte.</p>
+                                    <a href="blog/post4.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://www.prosimtec.com/wp-content/uploads/2025/02/illustrate-a-high-tech-retail-store-or-e-commerce-1.jpg" alt="Reportes avanzados en StockMaster" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 25 Sep 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Equipo StockMaster</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-file-alt"></i> Cómo Usar Reportes Avanzados en StockMaster</h3>
+                                    <p class="post-excerpt">Guía paso a paso para generar insights valiosos y tomar decisiones basadas en datos reales de tu inventario.</p>
+                                    <a href="blog/post5.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="blog-post-item">
+                            <div class="blog-card">
+                                <div class="card-image">
+                                    <img src="https://media.licdn.com/dms/image/v2/D5612AQF02uXJk6CDDA/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1708109320949?e=2147483647&v=beta&t=byU23ucT88WUBcgvYKccWQ6Gqorg1nmOW1bBV_wCHpU" alt="Tips para PYMES en Colombia" loading="lazy">
+                                </div>
+                                <div class="card-content">
+                                    <div class="post-meta">
+                                        <span class="meta-date"><i class="fas fa-calendar-alt"></i> 20 Sep 2024</span>
+                                        <span class="meta-author"><i class="fas fa-user"></i> Ana López</span>
+                                    </div>
+                                    <h3 class="post-title"><i class="fas fa-lightbulb"></i> Tips para PYMES Colombianas: Eficiencia en Inventarios</h3>
+                                    <p class="post-excerpt">Adaptaciones locales para normativas y mercados en Bogotá y más allá. Casos de éxito con StockMaster.</p>
+                                    <a href="blog/post6.html" class="read-more-btn" aria-label="Leer artículo completo">Leer Más <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="blog-pagination">
+                        <nav aria-label="Paginación del blog">
+                            <ul class="pagination-custom">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Página anterior"><i class="fas fa-chevron-left"></i> Anterior</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="blog-pagina2.html">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="blog-pagina2.html" aria-label="Página siguiente">Siguiente <i class="fas fa-chevron-right"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+                <aside class="col-lg-4 blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title"><i class="fas fa-tags"></i> Categorías</h4>
+                        <ul class="widget-list">
+                            <li><a href="#" class="widget-link">Inventarios <span class="count">(12)</span></a></li>
+                            <li><a href="#" class="widget-link">Logística <span class="count">(8)</span></a></li>
+                            <li><a href="#" class="widget-link">PYMES <span class="count">(5)</span></a></li>
+                            <li><a href="#" class="widget-link">Tecnología <span class="count">(7)</span></a></li>
+                            <li><a href="#" class="widget-link">Reportes <span class="count">(4)</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title"><i class="fas fa-envelope"></i>Nuevas Noticias</h4>
+                        <p class="widget-desc">Recibe los últimos artículos directamente en tu email.</p>
+                        <form class="newsletter-form">
+                            <input type="email" class="form-control" placeholder="Tu email" required aria-label="Email para newsletter">
+                            <button type="submit" class="button button-green">Suscribirse</button>
+                        </form>
+                    </div>
+
+
+                    <div class="sidebar-widget">
+                        <h4 class="widget-title"><i class="fas fa-clock"></i> Recientes</h4>
+                        <ul class="widget-list">
+                            <li><a href="blog/post1.html" class="widget-link small">Cómo Optimizar tu Inventario...</a></li>
+                            <li><a href="blog/post2.html" class="widget-link small">2 Errores Comunes en Stock...</a></li>
+                            <li><a href="blog/post3.html" class="widget-link small">Beneficios de la Automatización...</a></li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <section class="blog-cta">
+            <div class="container text-center">
+                <h2><i class="fas fa-rss"></i> ¿Te Inspiró Nuestro Blog?</h2>
+                <p class="lead">Suscríbete para recibir actualizaciones semanales sobre gestión de inventarios y tendencias empresariales.</p>
+                <button class="btn cta-btn" data-bs-toggle="modal" data-bs-target="#newsletterModal">Suscribirse Gratis</button>
+
+  <footer class="site-footer">
+  <div class="footer-container">
+
+    <div class="footer-column contact-section">
+      <h4><strong>Contacto</strong></h4>
+      <div class="contact-info">
+        <p><strong>Email:</strong> 
+          <a href="mailto:kfmendez@ucompensar.edu.co">kfmendez@ucompensar.edu.co</a>
+        </p>
+        <p><strong>Teléfono:</strong> 
+          <a href="tel:3007217921">3007217921</a>
+        </p>
+        <p><strong>Dirección:</strong> Av. 68 #68b-10, Bogotá</p>
+      </div>
+      
+
+      <div class="social-media">
+        <a href="https://www.facebook.com/kevin.mendez.28" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/mendezkevin673" target="_blank" aria-label="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/kevin_mendez28" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/company/StockMaster" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://wa.me/3007217921" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-column links-section">
+      <h4>Soluciones</h4>
+      <ul>
+        <li><a href="servicios.html">Gestión de Inventarios</a></li>
+        <li><a href="servicios.html">constoría tecnológica</a></li>
+        <li><a href="servicios.html">Soporte Técnico</a></li>
+        <li><a href="servicios.html">Desarrollo Web</a></li>
+        <li><a href="servicios.html">Capacitación</a></li>
+        <li><a href="servicios.html">Análisis de Datos</a></li>
+        <li><a href="servicios.html">Integración de Sistemas</a></li>
+        <li><a href="servicios.html">Seguridad Cibernética</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column links-section">
+      <h4>Sobre la Empresa</h4>
+      <ul>
+        <li><a href="sobrenosotros.html">Quiénes Somos</a></li>
+        <li><a href="sobrenosotros.html">Misión y Visión</a></li>
+        <li><a href="sobrenosotros.html#historia">Nuestra Historia</a></li>
+        <li><a href="sobrenosotros.html#equipo">Equipo</a></li>
+      </ul>
+    </div>
+
+
+    <div class="footer-column links-section">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="planes.html">Descargas</a></li>
+        <li><a href="servicios.html#capacitacion">Webinars</a></li>
+        <li><a href="soporte.html">Soporte</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column mapa-section">
+      <h4><strong>Ubicación</strong></h4>
+      <div class="mapa">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5394234193773!2d-74.09008918836346!3d4.675871795279435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b002f1b6727%3A0x1824e35238b43072!2sCampus%20UCompensar%20Av.%2068!5e0!3m2!1ses-419!2sco!4v1755290488647!5m2!1ses-419!2sco" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>StockMaster</strong>. Todos los derechos reservados.</p>
+      <p>
+        <a href="politicadeprivacidad.html">Política de Privacidad</a> | 
+        <a href="terminosycondiciones.html">Términos y Condiciones</a> |
+        <a href="cookies.html">Política de Cookies</a> 
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+  function volverSegunOrigen(e) {
+    e.preventDefault();
+
+    const referrer = document.referrer;
+
+    if (referrer && referrer !== window.location.href) {
+      window.location.href = referrer;
+    } else {
+      window.location.href = "index 1.html";
+    }
+  }
+</script>
+
+</body>
+</html>

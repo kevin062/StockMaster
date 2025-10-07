@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planes</title>
+  <link rel="icon" type="image/png" href="Icono.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Planes</h1>
+</header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index 1.html">
+                <h3><i class="fas fa-box"></i> StockMaster</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a href="#" class="nav-link" onclick="volverSegunOrigen(event)">
+                    <i class="fas fa-arrow-left"></i> Volver
+                  </a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+                <li class="nav-item"><a class="nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
+                <li class="nav-item"><a class="nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+                <li class="nav-item"><a class="nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+              </ul>
+            </div>
+        </div>
+    </nav>
+
+<section id="planes" class="plans-section">
+  <h2>Nuestros Planes</h2>
+  <div class="plans-container">
+
+    <div class="plan-card">
+  <div class="plan-icon"><i class="fas fa-seedling"></i></div>
+  <h3>Básico</h3>
+  <p class="price">$49.900 / mes</p>
+  <ul>
+    <li>✔ Gestión básica de inventario</li>
+    <li>✔ Reportes simples</li>
+    <li>✔ Soporte por correo</li>
+  </ul>
+  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalBasico"><i class="fas fa-seedling"></i> Más Información
+</a>
+</div>
+
+<div class="plan-card destacado">
+  <div class="plan-icon"><i class="fas fa-rocket"></i></div>
+  <h3>Profesional</h3>
+  <p class="price">$99.900 / mes</p>
+  <ul>
+    <li>✔ Inventario avanzado</li>
+    <li>✔ Reportes detallados</li>
+    <li>✔ Soporte prioritario</li>
+    <li>✔ Integración con apps</li>
+  </ul>
+  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalProfesional"><i class="fas fa-rocket"></i> Más Información
+</a>
+</div>
+
+<div class="plan-card">
+  <div class="plan-icon"><i class="fas fa-building"></i></div>
+  <h3>Empresarial</h3>
+  <p class="price">$199.900 / mes</p>
+  <ul>
+    <li>✔ Todo lo del Profesional</li>
+    <li>✔ Personalización completa</li>
+    <li>✔ Capacitación al equipo</li>
+    <li>✔ Consultoría dedicada</li>
+  </ul>
+  <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEmpresarial"><i class="fas fa-building"></i> Más Información
+</a>
+</div>
+
+
+  </div>
+</section>
+
+<div class="modal fade" id="modalBasico" tabindex="-1" aria-labelledby="modalBasicoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalBasicoLabel"><i class="fas fa-seedling me-2"></i>Plan Básico</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ideal para negocios pequeños que necesitan control simple de stock y reportes básicos.</p>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check text-success me-2"></i>Gestión básica de inventario</li>
+          <li><i class="fas fa-check text-success me-2"></i>Reportes simples</li>
+          <li><i class="fas fa-check text-success me-2"></i>Soporte por correo</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="contacto.html" class="btn btn-primary">Solicitar Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalProfesional" tabindex="-1" aria-labelledby="modalProfesionalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalProfesionalLabel"><i class="fas fa-rocket me-2"></i>Plan Profesional</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Diseñado para negocios en crecimiento que requieren mayor detalle en reportes y soporte más rápido.</p>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check text-success me-2"></i>Inventario avanzado</li>
+          <li><i class="fas fa-check text-success me-2"></i>Reportes detallados</li>
+          <li><i class="fas fa-check text-success me-2"></i>Soporte prioritario</li>
+          <li><i class="fas fa-check text-success me-2"></i>Integración con aplicaciones externas</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="contacto.html" class="btn btn-primary">Solicitar Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalEmpresarial" tabindex="-1" aria-labelledby="modalEmpresarialLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title" id="modalEmpresarialLabel"><i class="fas fa-building me-2"></i>Plan Empresarial</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>La solución más completa para grandes empresas que necesitan control total, personalización y acompañamiento experto.</p>
+        <ul class="list-unstyled">
+          <li><i class="fas fa-check text-success me-2"></i>Todo lo del Profesional</li>
+          <li><i class="fas fa-check text-success me-2"></i>Personalización completa</li>
+          <li><i class="fas fa-check text-success me-2"></i>Capacitación al equipo</li>
+          <li><i class="fas fa-check text-success me-2"></i>Consultoría dedicada</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <a href="contacto.html" class="btn btn-primary">Solicitar Demo</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script>
+  function volverSegunOrigen(e) {
+    e.preventDefault();
+
+    // Captura la URL de donde vino el usuario
+    const referrer = document.referrer;
+
+    // Si existe y no es la misma página actual, vuelve allá
+    if (referrer && referrer !== window.location.href) {
+      window.location.href = referrer;
+    } else {
+      // Si no hay referrer (por ejemplo, si entraron directo)
+      window.location.href = "index 1.html";
+    }
+  }
+</script>
+
+</body>
+</html>
