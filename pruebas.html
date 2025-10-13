@@ -1,466 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulario de Contacto | StockMaster</title>
-  <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Gestión Inteligente de Inventarios</title>
+    <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
-<body class="contact-body">
-
-  <!-- HEADER -->
-  <header class="contact-header">
-    <h1 class="contact-header-title">Contáctanos</h1>
-  </header>
-
-  <!-- NAVBAR -->
-  <nav class="contact-navbar navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index 1.html">
-        <h3><i class="fas fa-box"></i> StockMaster</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a href="#" class="nav-link contact-nav-link" onclick="volverSegunOrigen(event)">
-              <i class="fas fa-arrow-left"></i> Volver
-            </a>
-          </li>
-          <li class="nav-item"><a class="nav-link contact-nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
-          <li class="nav-item"><a class="nav-link contact-nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
-          <li class="nav-item"><a class="nav-link contact-nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
-          <li class="nav-item"><a class="nav-link contact-nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
-          <li class="nav-item"><a class="nav-link contact-nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- MAIN CONTAINER -->
-  <section class="contact-container">
-    <div class="contact-card">
-      
-      <!-- HEADER ICON -->
-      <div class="contact-header-icon">
-        <i class="fas fa-envelope"></i>
-      </div>
-
-      <h2 class="contact-title">Solicita Información</h2>
-      <p class="contact-subtitle">
-        Selecciona los servicios, planes o soporte que necesites y completa tus datos. 
-        Nos pondremos en contacto contigo lo antes posible.
-      </p>
-
-      <!-- FORMULARIO -->
-      <form id="contactForm" class="contact-form" novalidate>
-        
-        <!-- DATOS PERSONALES -->
-        <div class="contact-section-header">
-          <i class="fas fa-user-circle me-2"></i>Información Personal
-        </div>
-
-        <div class="contact-form-row">
-          <div class="contact-form-group">
-            <label for="nombre" class="contact-form-label">
-              <i class="fas fa-user me-2"></i>Nombre completo <span class="text-danger">*</span>
-            </label>
-            <input 
-              type="text" 
-              id="nombre" 
-              name="nombre" 
-              class="contact-form-input" 
-              placeholder="Escribe tu nombre" 
-              required>
-          </div>
-
-          <div class="contact-form-group">
-            <label for="email" class="contact-form-label">
-              <i class="fas fa-envelope me-2"></i>Correo electrónico <span class="text-danger">*</span>
-            </label>
-            <input 
-              type="email" 
-              id="email" 
-              name="email" 
-              class="contact-form-input" 
-              placeholder="ejemplo@correo.com" 
-              required>
-          </div>
-        </div>
-
-        <div class="contact-form-row">
-          <div class="contact-form-group">
-            <label for="telefono" class="contact-form-label">
-              <i class="fas fa-phone me-2"></i>Teléfono
-            </label>
-            <input 
-              type="tel" 
-              id="telefono" 
-              name="telefono" 
-              class="contact-form-input" 
-              placeholder="3007217921">
-          </div>
-
-          <div class="contact-form-group">
-            <label for="sede" class="contact-form-label">
-              <i class="fas fa-map-marker-alt me-2"></i>Seleccione su Ciudad <span class="text-danger">*</span>
-            </label>
-            <select id="sede" name="sede" class="contact-form-select" required>
-              <option value="">-- Seleccione --</option>
-              <option value="Bog">🏙️ Bogotá</option>
-              <option value="Quilla">🌴 Barranquilla</option>
-              <option value="Car">🏖️ Cartagena</option>
-              <option value="Med">🏔️ Medellín</option>
-              <option value="Cal">☀️ Cali</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- SERVICIOS -->
-        <div class="contact-section-header">
-          <i class="fas fa-cogs me-2"></i>Servicios
-        </div>
-        <div class="contact-options-grid">
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Inventario">
-            <div class="contact-option-content">
-              <i class="fas fa-boxes-stacked"></i>
-              <span>Gestión de Inventario</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Consultoría">
-            <div class="contact-option-content">
-              <i class="fas fa-lightbulb"></i>
-              <span>Consultoría Tecnológica</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Soporte">
-            <div class="contact-option-content">
-              <i class="fas fa-headset"></i>
-              <span>Soporte Técnico</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Web">
-            <div class="contact-option-content">
-              <i class="fas fa-code"></i>
-              <span>Desarrollo Web</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Capacitación">
-            <div class="contact-option-content">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Capacitación</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Datos">
-            <div class="contact-option-content">
-              <i class="fas fa-chart-line"></i>
-              <span>Análisis de Datos</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Integración">
-            <div class="contact-option-content">
-              <i class="fas fa-plug"></i>
-              <span>Integración de Sistemas</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Seguridad">
-            <div class="contact-option-content">
-              <i class="fas fa-shield-alt"></i>
-              <span>Seguridad Cibernética</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="servicios" value="Ninguno">
-            <div class="contact-option-content">
-              <i class="fas fa-times-circle"></i>
-              <span>Ninguno</span>
-            </div>
-          </label>
-        </div>
-
-        <!-- PLANES -->
-        <div class="contact-section-header">
-          <i class="fas fa-rocket me-2"></i>Planes
-        </div>
-        <div class="contact-options-grid contact-options-grid-small">
-          <label class="contact-option-card">
-            <input type="radio" name="plan" value="Básico">
-            <div class="contact-option-content">
-              <i class="fas fa-seedling"></i>
-              <span>Básico</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="plan" value="Profesional">
-            <div class="contact-option-content">
-              <i class="fas fa-rocket"></i>
-              <span>Profesional</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="plan" value="Empresarial">
-            <div class="contact-option-content">
-              <i class="fas fa-building"></i>
-              <span>Empresarial</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="plan" value="Notengo">
-            <div class="contact-option-content">
-              <i class="fas fa-times-circle"></i>
-              <span>No tengo</span>
-            </div>
-          </label>
-        </div>
-
-        <!-- SOPORTE -->
-        <div class="contact-section-header">
-          <i class="fas fa-headset me-2"></i>Soporte
-        </div>
-        <div class="contact-options-grid contact-options-grid-small">
-          <label class="contact-option-card">
-            <input type="radio" name="soporte" value="Tecnico">
-            <div class="contact-option-content">
-              <i class="fas fa-screwdriver-wrench"></i>
-              <span>Soporte Técnico</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="soporte" value="24/7">
-            <div class="contact-option-content">
-              <i class="fas fa-headset"></i>
-              <span>Atención 24/7</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="soporte" value="Capacitación">
-            <div class="contact-option-content">
-              <i class="fas fa-chalkboard-teacher"></i>
-              <span>Capacitación</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="soporte" value="Consultoría">
-            <div class="contact-option-content">
-              <i class="fas fa-user-tie"></i>
-              <span>Consultoría</span>
-            </div>
-          </label>
-          <label class="contact-option-card">
-            <input type="radio" name="soporte" value="Ninguno">
-            <div class="contact-option-content">
-              <i class="fas fa-times-circle"></i>
-              <span>Ninguno u otro</span>
-            </div>
-          </label>
-        </div>
-
-        <!-- MENSAJE -->
-        <div class="contact-form-group">
-          <label for="mensaje" class="contact-form-label">
-            <i class="fas fa-comment-dots me-2"></i>Mensaje adicional
-          </label>
-          <textarea 
-            id="mensaje" 
-            name="mensaje" 
-            rows="4" 
-            class="contact-form-textarea" 
-            placeholder="Escribe aquí más detalles de lo que necesitas..."></textarea>
-        </div>
-
-        <!-- POLÍTICA -->
-        <div class="contact-policy-box">
-          <input type="checkbox" id="politica" name="politica" class="contact-checkbox" required>
-          <label for="politica" class="contact-policy-label">
-            Acepto la <a href="protecciondedatos.html" target="_blank">Política de Protección de Datos</a>.
-          </label>
-        </div>
-
-        <!-- BOTÓN -->
-        <button type="submit" class="contact-btn-submit">
-          <i class="fas fa-paper-plane me-2"></i> Enviar Solicitud
-        </button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="contact-footer">
-    <div class="contact-footer-container">
-      <!-- Contacto -->
-      <div class="contact-footer-column">
-        <h4>Contacto</h4>
-        <p><i class="fas fa-envelope me-2"></i><a href="mailto:kfmendez@ucompensar.edu.co">kfmendez@ucompensar.edu.co</a></p>
-        <p><i class="fas fa-phone me-2"></i><a href="tel:3007217921">3007217921</a></p>
-        <p><i class="fas fa-map-marker-alt me-2"></i>Av. 68 #68b-10, Bogotá</p>
-        
-        <div class="contact-social-media">
-          <a href="https://www.facebook.com/kevin.mendez.28" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/mendezkevin673" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/kevin_mendez28" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/StockMaster" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://wa.me/3007217921" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-      </div>
-
-      <!-- Soluciones -->
-      <div class="contact-footer-column">
-        <h4>Soluciones</h4>
-        <ul>
-          <li><a href="servicios.html">Gestión de Inventarios</a></li>
-          <li><a href="servicios.html">Consultoría Tecnológica</a></li>
-          <li><a href="servicios.html">Soporte Técnico</a></li>
-          <li><a href="servicios.html">Desarrollo Web</a></li>
-        </ul>
-      </div>
-
-      <!-- Sobre la Empresa -->
-      <div class="contact-footer-column">
-        <h4>Sobre la Empresa</h4>
-        <ul>
-          <li><a href="sobrenosotros.html">Quiénes Somos</a></li>
-          <li><a href="sobrenosotros.html">Misión y Visión</a></li>
-          <li><a href="sobrenosotros.html#historia">Nuestra Historia</a></li>
-          <li><a href="sobrenosotros.html#equipo">Equipo</a></li>
-        </ul>
-      </div>
-
-      <!-- Mapa -->
-      <div class="contact-footer-column contact-footer-mapa">
-        <h4>Ubicación</h4>
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5394234193773!2d-74.09008918836346!3d4.675871795279435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b002f1b6727%3A0x1824e35238b43072!2sCampus%20UCompensar%20Av.%2068!5e0!3m2!1ses-419!2sco!4v1755290488647!5m2!1ses-419!2sco" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-
-    <div class="contact-footer-bottom">
-      <p>&copy; 2025 <strong>StockMaster</strong>. Todos los derechos reservados.</p>
-      <p>
-        <a href="politicadeprivacidad.html">Política de Privacidad</a> | 
-        <a href="terminosycondiciones.html">Términos y Condiciones</a> |
-        <a href="cookies.html">Política de Cookies</a>
-      </p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <script>
-    function volverSegunOrigen(e) {
-      e.preventDefault();
-      const referrer = document.referrer;
-      if (referrer && referrer !== window.location.href) {
-        window.location.href = referrer;
-      } else {
-        window.location.href = "index 1.html";
-      }
-    }
-  </script>
-</body>
-</html>
-
-
-
+<body>
+  <style>
+    /* PAGINA PRINCIPAL------------------------------------------------------------------------------*/
 /* ============================================
-   ESTILOS PARA FORMULARIO DE CONTACTO
-   Archivo: contacto-styles.css
+   ESTILOS PÁGINA PRINCIPAL - STOCKMASTER
+   Archivo: index-styles.css
    ============================================ */
 
-/* Reset y configuración base */
+/* Reset y Variables */
+:root {
+  --primary-color: rgb(22, 140, 140);
+  --primary-dark: rgb(18, 112, 112);
+  --primary-light: rgb(26, 168, 168);
+  --secondary-color: #38ef7d;
+  --dark-color: #2d3748;
+  --light-bg: #f7fafc;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BODY */
-.contact-body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  min-height: 100vh;
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
 }
 
-/* HEADER */
-.contact-header {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 25px 0;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  position: sticky;
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
   top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0 C150,50 350,100 600,50 C850,0 1050,50 1200,25 L1200,120 L0,120 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+  background-size: cover;
+  animation: wave 20s linear infinite;
 }
 
-.contact-header-title {
-  color: #667eea;
-  font-size: 32px;
-  font-weight: 700;
-  margin: 0;
-  letter-spacing: 1px;
+@keyframes wave {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-50px); }
 }
 
-/* NAVBAR */
-.contact-navbar {
-  background: rgba(102, 126, 234, 0.95) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 12px 0;
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+  max-width: 900px;
+  animation: heroFadeIn 1s ease-out;
 }
 
-.contact-navbar .navbar-brand h3 {
-  color: #ffffff;
-  font-size: 20px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.contact-nav-link {
-  color: rgba(255, 255, 255, 0.9) !important;
-  padding: 8px 15px !important;
-  border-radius: 6px;
-  transition: all 0.3s ease;
-  font-size: 14px;
-}
-
-.contact-nav-link:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff !important;
-}
-
-/* CONTAINER */
-.contact-container {
-  padding: 50px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* CARD */
-.contact-card {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 50px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  animation: contactFadeIn 0.6s ease-out;
-}
-
-@keyframes contactFadeIn {
+@keyframes heroFadeIn {
   from {
     opacity: 0;
     transform: translateY(30px);
@@ -471,275 +95,939 @@
   }
 }
 
-/* HEADER ICON */
-.contact-header-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-radius: 50%;
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.hero-badge i {
+  color: #ffd700;
+  margin-right: 5px;
+}
+
+.hero-title {
+  font-size: 56px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.95;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  padding: 15px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+}
+
+.hero-btn-primary {
+  background: white;
+  color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.hero-btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-btn-secondary:hover {
+  background: white;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30px;
+  color: white;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+  40% { transform: translateY(-20px) translateX(-50%); }
+  60% { transform: translateY(-10px) translateX(-50%); }
+}
+
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+
+.features-section {
+  padding: 100px 20px;
+  background: var(--light-bg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-light));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 25px;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.5);
-  animation: contactIconFloat 3s ease-in-out infinite;
-}
-
-@keyframes contactIconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.contact-header-icon i {
+  margin-bottom: 25px;
+  font-size: 32px;
   color: white;
-  font-size: 36px;
+  transition: transform 0.3s ease;
 }
 
-/* TÍTULO */
-.contact-title {
-  text-align: center;
-  color: #2d3748;
-  font-size: 36px;
+.feature-card:hover .feature-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.feature-icon-1 { background: linear-gradient(135deg, #667eea, #764ba2); }
+.feature-icon-2 { background: linear-gradient(135deg, #f093fb, #f5576c); }
+.feature-icon-3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.feature-icon-4 { background: linear-gradient(135deg, #43e97b, #38f9d7); }
+.feature-icon-5 { background: linear-gradient(135deg, #fa709a, #fee140); }
+.feature-icon-6 { background: linear-gradient(135deg, #30cfd0, #330867); }
+
+.feature-card h3 {
+  font-size: 22px;
   font-weight: 700;
+  color: var(--dark-color);
   margin-bottom: 15px;
 }
 
-.contact-subtitle {
-  text-align: center;
+.feature-card p {
+  font-size: 15px;
   color: #718096;
-  font-size: 16px;
-  margin-bottom: 40px;
-  line-height: 1.6;
+  line-height: 1.7;
+  margin-bottom: 20px;
 }
 
-/* FORMULARIO */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* SECTION HEADER */
-.contact-section-header {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-size: 18px;
+.feature-link {
+  color: var(--primary-color);
+  text-decoration: none;
   font-weight: 600;
-  margin-top: 20px;
-  display: flex;
+  font-size: 15px;
+  display: inline-flex;
   align-items: center;
-  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
-}
-
-/* FORM GROUP */
-.contact-form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-/* FORM ROW */
-.contact-form-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-/* LABELS */
-.contact-form-label {
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  color: #4a5568;
-}
-
-.contact-form-label i {
-  color: #667eea;
-}
-
-/* INPUTS */
-.contact-form-input {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 2px solid #e2e8f0;
-  font-size: 15px;
-  outline: none;
   transition: all 0.3s ease;
-  background: #ffffff;
 }
 
-.contact-form-input:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
-  background: #f8f9ff;
+.feature-link:hover {
+  color: var(--primary-dark);
+  transform: translateX(5px);
 }
 
-/* TEXTAREA */
-.contact-form-textarea {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 2px solid #e2e8f0;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-  resize: vertical;
-  font-family: inherit;
+.feature-link i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
 }
 
-.contact-form-textarea:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
-  background: #f8f9ff;
+.feature-link:hover i {
+  transform: translateX(5px);
 }
 
-/* SELECT */
-.contact-form-select {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 2px solid #e2e8f0;
-  font-size: 15px;
-  outline: none;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  background: #ffffff;
+/* ============================================
+   PRODUCTOS SECTION
+   ============================================ */
+
+.productos-section {
+  padding: 100px 20px;
+  background: white;
 }
 
-.contact-form-select:focus {
-  border-color: #667eea;
-  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
-  background: #f8f9ff;
+.carousel-custom {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
 }
 
-/* OPTIONS GRID */
-.contact-options-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin-bottom: 10px;
-}
-
-.contact-options-grid-small {
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
-/* OPTION CARD */
-.contact-option-card {
+.carousel-image-wrapper {
   position: relative;
-  cursor: pointer;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carousel-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item.active .carousel-image-wrapper img {
+  animation: zoomIn 8s ease-out;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+}
+
+.carousel-caption-custom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 40px;
+  text-align: left;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.carousel-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.carousel-caption-custom h3 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.carousel-caption-custom p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  max-width: 600px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.carousel-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(22, 140, 140, 0.4);
+}
+
+.carousel-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(22, 140, 140, 0.6);
+  color: white;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+  height: 60px;
+  background: rgba(22, 140, 140, 0.8);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+  left: 20px;
+}
+
+.carousel-control-next {
+  right: 20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: var(--primary-color);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background: var(--primary-color);
+  width: 30px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   VIDEO SECTION
+   ============================================ */
+
+.video-section {
+  padding: 100px 20px;
+  background: var(--light-bg);
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-wrapper-custom {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.video-wrapper-custom:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+.video-wrapper-custom video {
+  width: 100%;
   display: block;
 }
 
-.contact-option-card input[type="radio"] {
+.video-play-overlay {
   position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.contact-option-content {
-  background: #f7fafc;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  min-height: 100px;
-  justify-content: center;
-}
-
-.contact-option-content i {
-  font-size: 28px;
-  color: #667eea;
-  transition: all 0.3s ease;
-}
-
-.contact-option-content span {
-  font-size: 14px;
-  font-weight: 600;
-  color: #4a5568;
-}
-
-.contact-option-card:hover .contact-option-content {
-  border-color: #667eea;
-  background: #f8f9ff;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-}
-
-.contact-option-card input:checked + .contact-option-content {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-color: #667eea;
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-}
-
-.contact-option-card input:checked + .contact-option-content i,
-.contact-option-card input:checked + .contact-option-content span {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
   color: white;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
-/* POLICY BOX */
-.contact-policy-box {
+.video-wrapper-custom:hover .video-play-overlay {
+  opacity: 0;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+
+.cta-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+}
+
+.cta-card {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.cta-content {
+  padding: 60px;
+}
+
+.cta-content h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 18px;
+  color: #718096;
+  margin-bottom: 35px;
+  line-height: 1.7;
+}
+
+.cta-buttons {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  background: #f7fafc;
-  padding: 15px 20px;
-  border-radius: 10px;
-  border: 2px solid #e2e8f0;
-  margin-top: 10px;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
-.contact-checkbox {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  accent-color: #667eea;
-}
-
-.contact-policy-label {
-  font-size: 14px;
-  color: #4a5568;
-  margin: 0;
-  cursor: pointer;
-}
-
-.contact-policy-label a {
-  color: #667eea;
+.cta-btn {
+  padding: 15px 32px;
+  border-radius: 50px;
   text-decoration: none;
   font-weight: 600;
-}
-
-.contact-policy-label a:hover {
-  text-decoration: underline;
-}
-
-/* BOTÓN SUBMIT */
-.contact-btn-submit {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  border: none;
-  padding: 16px 40px;
-  font-weight: 600;
-  font-size: 17px;
-  border-radius: 12px;
+  font-size: 16px;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-  cursor: pointer;
-  margin-top: 20px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.contact-btn-submit:hover {
-  background: linear-gradient(135deg, #5568d3, #653a8b);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+.cta-btn-primary {
+  background: var(--primary-color);
+  color: white;
+  box-shadow: 0 5px 20px rgba(22, 140, 140, 0.3);
 }
+
+.cta-btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(22, 140, 140, 0.5);
+  color: white;
+}
+
+.cta-btn-outline {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+.cta-btn-outline:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.cta-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cta-card:hover .cta-image img {
+  transform: scale(1.1);
+}
+
+  </style>
+    <!-- HEADER -->
+    <header class="header-bar">
+        <div class="Icono">
+            <img src="iconoyloginIMG/Icono.png" alt="Icono">
+        </div>
+        <div class="header-center">
+            <h1><a href="index.html">StockMaster</a></h1>
+        </div>
+        <div class="login-btn">
+            <a href="login.html">
+                <img src="iconoyloginIMG/login.png" alt="Usuario">
+            </a>
+        </div>
+    </header>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <h3><i class="fas fa-box"></i> StockMaster</h3>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menuPrincipal">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="servicios.html"><i class="fas fa-cogs"></i> Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="productos.html"><i class="fas fa-boxes"></i> Productos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="planes.html"><i class="fas fa-chart-line"></i> Planes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="soporte.html"><i class="fas fa-headset"></i> Soporte</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobrenosotros.html"><i class="fas fa-users"></i> Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-star"></i> #1 en Gestión de Inventarios
+            </div>
+            <h1 class="hero-title">Transforma tu Gestión de Inventarios</h1>
+            <p class="hero-subtitle">Potencia tu negocio con tecnología inteligente de última generación</p>
+            <div class="hero-buttons">
+                <a href="login.html" class="hero-btn hero-btn-primary">
+                    <i class="fas fa-rocket me-2"></i>Comenzar Ahora
+                </a>
+                <a href="productos.html" class="hero-btn hero-btn-secondary">
+                    <i class="fas fa-play-circle me-2"></i>Ver Demo
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">10K+</div>
+                    <div class="stat-label">Empresas Confían</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Garantizado</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Soporte Disponible</div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Características</span>
+                <h2 class="section-title">Todo lo que Necesitas en un Solo Lugar</h2>
+                <p class="section-description">Descubre las herramientas que transformarán tu negocio</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-1">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Análisis en Tiempo Real</h3>
+                    <p>Monitorea tu inventario con dashboards interactivos y reportes automáticos</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-2">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>IA Predictiva</h3>
+                    <p>Predice demanda y optimiza compras con inteligencia artificial avanzada</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-3">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Multi-Plataforma</h3>
+                    <p>Accede desde cualquier dispositivo: PC, tablet o smartphone</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad Total</h3>
+                    <p>Protección de datos con encriptación de nivel bancario</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-5">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Sincronización Cloud</h3>
+                    <p>Datos sincronizados automáticamente en la nube</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte Premium</h3>
+                    <p>Asistencia experta disponible las 24 horas del día</p>
+                    <a href="soporte.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS CAROUSEL -->
+    <section class="productos-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Productos</span>
+                <h2 class="section-title">Soluciones Profesionales</h2>
+                <p class="section-description">Herramientas diseñadas para potenciar tu negocio</p>
+            </div>
+
+            <div id="productosCarousel" class="carousel slide carousel-custom" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Catálogo Organizado">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-list-alt"></i>
+                            </div>
+                            <h3>Catálogo Organizado</h3>
+                            <p>Sistema de catalogación inteligente con búsqueda avanzada y categorización automática para optimizar tu gestión diaria</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-eye me-2"></i>Ver Más
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Inventario Inteligente">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <h3>Inventario Inteligente</h3>
+                            <p>Controla tu stock con IA predictiva, alertas automáticas y sugerencias de reabastecimiento en tiempo real</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-chart-line me-2"></i>Explorar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ventas Rápidas">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3>Ventas Rápidas</h3>
+                            <p>Procesa transacciones en segundos con nuestra interfaz optimizada para puntos de venta modernos</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-bolt me-2"></i>Probar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Reportes Avanzados">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h3>Reportes Avanzados</h3>
+                            <p>Visualiza métricas clave con dashboards interactivos y genera reportes personalizados en PDF o Excel</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-file-alt me-2"></i>Descargar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Gestión de Usuarios">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <h3>Gestión de Usuarios</h3>
+                            <p>Control total sobre permisos, roles y accesos con auditoría completa de actividades</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-cog me-2"></i>Configurar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="carousel-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Soporte 24/7">
+                            <div class="carousel-overlay"></div>
+                        </div>
+                        <div class="carousel-caption-custom">
+                            <div class="carousel-icon">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                            <h3>Soporte 24/7</h3>
+                            <p>Equipo experto disponible las 24 horas con chat en vivo, email y teléfono</p>
+                            <a href="contacto.html" class="carousel-btn">
+                                <i class="fas fa-headset me-2"></i>Contactar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="4"></button>
+                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VIDEO DEMO -->
+    <section class="video-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Demo en Vivo</span>
+                <h2 class="section-title">Ve StockMaster en Acción</h2>
+                <p class="section-description">Descubre cómo funciona nuestro sistema</p>
+            </div>
+            
+            <div class="video-container">
+                <div class="video-wrapper-custom">
+                    <video controls autoplay muted loop poster="inventario.mp4">
+                        <source src="inventario.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-overlay">
+                        <i class="fas fa-play-circle"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>¿Listo para Transformar tu Negocio?</h2>
+                    <p>Únete a miles de empresas que ya optimizan su gestión con StockMaster</p>
+                    <div class="cta-buttons">
+                        <a href="login.html" class="cta-btn cta-btn-primary">
+                            <i class="fas fa-rocket me-2"></i>Comenzar Gratis
+                        </a>
+                        <a href="contacto.html" class="cta-btn cta-btn-outline">
+                            <i class="fas fa-phone me-2"></i>Solicitar Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="cta-image">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CTA Image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-column contact-section">
+                <h4><strong>Contacto</strong></h4>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> 
+                        <a href="mailto:kfmendez@ucompensar.edu.co">kfmendez@ucompensar.edu.co</a>
+                    </p>
+                    <p><strong>Teléfono:</strong> 
+                        <a href="tel:3007217921">3007217921</a>
+                    </p>
+                    <p><strong>Dirección:</strong> Av. 68 #68b-10, Bogotá</p>
+                </div>
+
+                <div class="social-media">
+                    <a href="https://www.facebook.com/kevin.mendez.28" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/mendezkevin673" target="_blank" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kevin_mendez28" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/StockMaster" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://wa.me/3007217921" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-column links-section">
+                <h4>Soluciones</h4>
+                <ul>
+                    <li><a href="servicios.html">Gestión de Inventarios</a></li>
+                    <li><a href="servicios.html">Consultoría Tecnológica</a></li>
+                    <li><a href="servicios.html">Soporte Técnico</a></li>
+                    <li><a href="servicios.html">Desarrollo Web</a></li>
+                    <li><a href="servicios.html">Capacitación</a></li>
+                    <li><a href="servicios.html">Análisis de Datos</a></li>
+                    <li><a href="servicios.html">Integración de Sistemas</a></li>
+                    <li><a href="servicios.html">Seguridad Cibernética</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column links-section">
+                <h4>Sobre la Empresa</h4>
+                <ul>
+                    <li><a href="sobrenosotros.html">Quiénes Somos</a></li>
+                    <li><a href="sobrenosotros.html">Misión y Visión</a></li>
+                    <li><a href="sobrenosotros.html#historia">Nuestra Historia</a></li>
+                    <li><a href="nuestroequipo.html">Equipo</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column links-section">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="planes.html">Descargas</a></li>
+                    <li><a href="servicios.html#capacitacion">Webinars</a></li>
+                    <li><a href="soporte.html">Soporte</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column mapa-section">
+                <h4><strong>Ubicación</strong></h4>
+                <div class="mapa">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5394234193773!2d-74.09008918836346!3d4.675871795279435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9b002f1b6727%3A0x1824e35238b43072!2sCampus%20UCompensar%20Av.%2068!5e0!3m2!1ses-419!2sco!4v1755290488647!5m2!1ses-419!2sco" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 <strong>StockMaster</strong>. Todos los derechos reservados.</p>
+                <p>
+                    <a href="politicadeprivacidad.html">Política de Privacidad</a> | 
+                    <a href="terminosycondiciones.html">Términos y Condiciones</a> |
+                    <a href="cookies.html">Política de Cookies</a> 
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
 

@@ -1,39 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="StockMaster" content="width=device-width, initial-scale=1.0">
-    <title>StockMaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockMaster - Gestión Inteligente de Inventarios</title>
     <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
- 
-</head>
 <body>
-        <header class="header-bar">
-      <div class="Icono">
-        <img src="Icono.png" alt="Icono">
-      </div>
-      <div class="header-center">
-        <h1><a href="index.html">StockMaster</a></h1>
-        
-      </div>
-      <div class="login-btn">
-        <a href="login.html">
-          <img src="login.png" alt="Usuario">
-        </a>
-      </div>
-      
-      
-        </header>
+    <header class="header-bar">
+        <div class="Icono">
+            <img src="iconoyloginIMG/Icono.png" alt="Icono">
+        </div>
+        <div class="header-center">
+            <h1><a href="index.html">StockMaster</a></h1>
+        </div>
+        <div class="login-btn">
+            <a href="login.html">
+                <img src="iconoyloginIMG/login.png" alt="Usuario">
+            </a>
+        </div>
+    </header>
 
- <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
                 <h3><i class="fas fa-box"></i> StockMaster</h3>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menuPrincipal">
@@ -50,96 +45,359 @@
     </nav>
 
 
+   <section class="hero-section">
+  <canvas id="heroCanvas3D"></canvas>
 
-    
+  <div class="hero-content">
+    <div class="hero-badge energy-badge">
+  <i class="fas fa-bolt"></i> Innovación en tu Inventario
+  <span class="energy-flash"></span>
+</div>
 
-    <section id="productos">
+    <h1 class="hero-title">Transforma tu Gestión de Inventarios</h1>
+    <p class="hero-subtitle">
+      Tecnología inteligente, diseño envolvente y rendimiento sin límites.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="login.html" class="hero-btn hero-btn-primary">
+        <i class="fas fa-rocket me-2"></i> Comenzar Ahora
+      </a>
+      <a href="#video-demo" class="hero-btn hero-btn-secondary">
+        <i class="fas fa-play-circle me-2"></i> Ver Demo
+      </a>
+    </div>
+
+   <div class="hero-stats">
+  <div class="stat-item">
+    <div class="stat-number" data-target="10000">0</div>
+    <div class="stat-label">Empresas Confían</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="99.9">0</div>
+    <div class="stat-label">Uptime Garantizado</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number" data-target="24">0</div>
+    <div class="stat-label">Soporte Disponible</div>
+  </div>
+</div>
+
+
+</section>
+<div class="hero-scroll">
+  <i class="fas fa-chevron-down"></i>
+</div>
+</section>
+
+
+   <section id="features" class="features-section">
         <div class="container">
-            <h1 class="text-white">Productos</h1>
-            <div id="productosCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-                
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Catálogo Organizado">
-                        <div class="carousel-caption">
-                            <h3>Catálogo Organizado</h3>
-                            <p>Accede a un catálogo digital intuitivo y actualizado en tiempo real para optimizar tus ventas diarias.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-eye me-2"></i>Ver Más</a>
-                        </div>
-                    </div>
+            <div class="section-header">
+                <span class="section-badge">
+                  <i class="fas fa-cogs"></i> Características
+                </span>
 
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Inventario Inteligente">
-                        <div class="carousel-caption">
-                            <h3>Inventario Inteligente</h3>
-                            <p>Controla tu stock con IA predictiva para evitar faltantes y maximizar la eficiencia operativa.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-chart-line me-2"></i>Explorar</a>
-                        </div>
+                <h2 class="section-title">Todo lo que Necesitas en un Solo Lugar</h2>
+                <p class="section-description">Descubre las herramientas que transformarán tu negocio</p>
+            </div>
+            
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-1">
+                        <i class="fas fa-chart-line"></i>
                     </div>
-
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Ventas Rápidas">
-                        <div class="carousel-caption">
-                            <h3>Ventas Rápidas</h3>
-                            <p>Automatiza procesos de venta para cerrar tratos más rápido y aumentar tus ingresos.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-shopping-cart me-2"></i>Comprar</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Reportes Avanzados">
-                        <div class="carousel-caption">
-                            <h3>Reportes Avanzados</h3>
-                            <p>Genera insights detallados con visualizaciones interactivas para decisiones informadas.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-file-alt me-2"></i>Descargar</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Gestión de Usuarios">
-                        <div class="carousel-caption">
-                            <h3>Gestión de Usuarios</h3>
-                            <p>Administra roles y permisos de manera segura para equipos colaborativos y escalables.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-users me-2"></i>Configurar</a>
-                        </div>
-                    </div>
-
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" class="d-block w-100" alt="Soporte 24/7">
-                        <div class="carousel-caption">
-                            <h3>Soporte 24/7</h3>
-                            <p>Recibe asistencia experta en cualquier momento para mantener tu negocio en marcha.</p>
-                            <a href="contacto.html" class="btn btn-danger"><i class="fas fa-headset me-2"></i>Contactar</a>
-                        </div>
-                    </div>
+                    <h3>Análisis en Tiempo Real</h3>
+                    <p>Monitorea tu inventario con dashboards interactivos y reportes automáticos</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <button class="carousel-control-prev" type="button" data-bs-target="#productosCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Anterior</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#productosCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Siguiente</span>
-                </button>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-2">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>IA Predictiva</h3>
+                    <p>Predice demanda y optimiza compras con inteligencia artificial avanzada</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
 
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                    <button type="button" data-bs-target="#productosCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-3">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Multi-Plataforma</h3>
+                    <p>Accede desde cualquier dispositivo: PC, tablet o smartphone</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-4">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Seguridad Total</h3>
+                    <p>Protección de datos con encriptación de nivel bancario</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-5">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <h3>Sincronización Cloud</h3>
+                    <p>Datos sincronizados automáticamente en la nube</p>
+                    <a href="servicios.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-6">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Soporte Premium</h3>
+                    <p>Asistencia experta disponible las 24 horas del día</p>
+                    <a href="soporte.html" class="feature-link">Explorar <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-     <div class="video-wrapper">
-        <video width="700" controls autoplay muted loop poster="inventario.mp4">
-        <source src="inventario.mp4" type="video/mp4">
-        </video>
+
+<section class="showbox-section">
+  <div class="container">
+    <div class="showbox-header text-center">
+      <span class="section-badge">
+        <i class="fas fa-cube"></i> Productos Premium
+      </span>
+      <h2 class="section-title">Explora Nuestras Soluciones Avanzadas</h2>
+      <p class="section-description">
+        Innovación y tecnología al servicio de tu negocio
+      </p>
     </div>
+
+    <div id="showboxCarousel" class="carousel slide showbox-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="showbox-card">
+            <div class="showbox-image">
+              <img src="https://images.unsplash.com/photo-1692914274658-819221d41d6c" alt="Catálogo Digital Inteligente" loading="lazy">
+              <div class="showbox-overlay"></div>
+            </div>
+            <div class="showbox-content">
+              <div class="showbox-icon"><i class="fas fa-list-alt"></i></div>
+              <h3>Catálogo Digital Inteligente</h3>
+              <p>Sistema de catalogación avanzado con búsqueda semántica y categorización automática por IA.</p>
+              <ul class="showbox-features">
+                <li><i class="fas fa-check-circle"></i> Búsqueda instantánea</li>
+                <li><i class="fas fa-check-circle"></i> Códigos QR/Barras</li>
+                <li><i class="fas fa-check-circle"></i> Vistas personalizables</li>
+              </ul>
+              <a href="#" class="showbox-btn">Ver detalles <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="showbox-card">
+            <div class="showbox-image">
+              <img src="https://marketingdigitalconsulting.com/wp-content/uploads/Gestion-de-inventarios-con-IA.jpg" alt="Inventario con IA" loading="lazy">
+              <div class="showbox-overlay"></div>
+            </div>
+            <div class="showbox-content">
+              <div class="showbox-icon"><i class="fas fa-brain"></i></div>
+              <h3>Inventario con IA</h3>
+              <p>Control inteligente de stock con predicción de demanda y sugerencias automáticas de reabastecimiento.</p>
+              <ul class="showbox-features">
+                <li><i class="fas fa-check-circle"></i> Predicción 97% precisa</li>
+                <li><i class="fas fa-check-circle"></i> Alertas proactivas</li>
+                <li><i class="fas fa-check-circle"></i> Optimización automática</li>
+              </ul>
+              <a href="#" class="showbox-btn">Ver detalles <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="showbox-card">
+            <div class="showbox-image">
+              <img src="https://www.triniteq.com/hs-fs/hubfs/PowerEPOS%20in%20a%20cafe.jpg?width=1200&height=700&name=PowerEPOS%20in%20a%20cafe.jpg" alt="POS Ultrarrápido" loading="lazy">
+              <div class="showbox-overlay"></div>
+            </div>
+            <div class="showbox-content">
+              <div class="showbox-icon"><i class="fas fa-shopping-cart"></i></div>
+              <h3>POS Ultrarrápido</h3>
+              <p>Punto de venta optimizado para cerrar transacciones en menos de 5 segundos.</p>
+              <ul class="showbox-features">
+                <li><i class="fas fa-check-circle"></i> Interfaz táctil</li>
+                <li><i class="fas fa-check-circle"></i> Pagos múltiples</li>
+                <li><i class="fas fa-check-circle"></i> Tickets digitales</li>
+              </ul>
+              <a href="#" class="showbox-btn">Ver detalles <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="showbox-card">
+            <div class="showbox-image">
+              <img src="https://tesisymasters.cl/wp-content/uploads/2022/12/imagenes-de-blog-1-5.jpg" alt="Panel de Control Analítico" loading="lazy">
+              <div class="showbox-overlay"></div>
+            </div>
+            <div class="showbox-content">
+              <div class="showbox-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Panel de Control Analítico</h3>
+              <p>Visualiza métricas clave en tiempo real y toma decisiones basadas en datos con paneles personalizables.</p>
+              <ul class="showbox-features">
+                <li><i class="fas fa-check-circle"></i> Gráficas dinámicas</li>
+                <li><i class="fas fa-check-circle"></i> Informes automatizados</li>
+                <li><i class="fas fa-check-circle"></i> Comparativas históricas</li>
+              </ul>
+              <a href="#" class="showbox-btn">Ver detalles <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="carousel-item">
+          <div class="showbox-card">
+            <div class="showbox-image">
+              <img src="https://web.didiglobal.com/_next/image/?url=https:%2F%2Fimages.ctfassets.net%2Fn7hs0hadu6ro%2F368GVYqdanZ4BE9vyVtznr%2F33feddd89fbdabe238073e611d8cdde0%2Fmx.HelpCenterHero.bgImage.jpg&w=2048&q=75" alt="Soporte 24/7" loading="lazy">
+              <div class="showbox-overlay"></div>
+            </div>
+            <div class="showbox-content">
+              <div class="showbox-icon"><i class="fas fa-headset"></i></div>
+              <h3>Soporte 24/7 y Capacitación</h3>
+              <p>Te acompañamos en cada paso: soporte humano, base de conocimientos y formación personalizada.</p>
+              <ul class="showbox-features">
+                <li><i class="fas fa-check-circle"></i> Atención en tiempo real</li>
+                <li><i class="fas fa-check-circle"></i> Videotutoriales</li>
+                <li><i class="fas fa-check-circle"></i> Onboarding guiado</li>
+              </ul>
+              <a href="#" class="showbox-btn">Ver detalles <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev showbox-control" type="button" data-bs-target="#showboxCarousel" data-bs-slide="prev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="carousel-control-next showbox-control" type="button" data-bs-target="#showboxCarousel" data-bs-slide="next" aria-label="Siguiente">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="cta-final">
+  <div class="cta-bg-pattern"></div>
+  <div class="container cta-grid">
+
+  
+<div id="video-demo" class="cta-video-side">
+  <div class="section-header">
+    <span class="section-badge">🎥 Demo en Vivo</span>
+    <h2 class="section-title" style="color: #ffffff">Ve StockMaster en Acción</h2>
+    <p class="section-description" style="color: #ffffff;">
+      Descubre cómo transformamos tu gestión de inventarios.
+    </p>
+  </div>
+
+  <div class="video-demo-container">
+    <div class="video-premium-wrapper">
+      <video id="demoVideo" poster="inventario.mp4" muted playsinline preload="metadata">
+        <source src="inventario.mp4" type="video/mp4">
+      </video>
+
+      <div id="playButton" class="video-play-btn">
+        <i class="fas fa-play"></i>
+      </div>
+    </div>
+
+    <div class="video-info-cards">
+      <div class="info-card">
+        <i class="fas fa-rocket"></i>
+        <h4>Setup en 5 Minutos</h4>
+        <p>Comienza a usar StockMaster en menos de 5 minutos.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h4>Training Incluido</h4>
+        <p>Capacitación completa para tu equipo.</p>
+      </div>
+      <div class="info-card">
+        <i class="fas fa-cloud-upload-alt"></i>
+        <h4>Migración Gratis</h4>
+        <p>Transferimos tus datos sin costo.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="cta-text-side">
+      <span class="cta-badge"><i class="fas fa-bolt"></i> Oferta Especial</span>
+      <h2 class="cta-final-title">
+        Únete a la Revolución <span class="gradient-text">del Inventario</span>
+      </h2>
+      <p class="cta-final-subtitle">
+        Más de 15,000 empresas ya optimizan su gestión con StockMaster.
+        Empieza gratis hoy y descubre por qué somos los #1 del mercado.
+      </p>
+
+      <div class="cta-benefits">
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Sin tarjeta de crédito</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Cancela cuando quieras</span>
+        </div>
+        <div class="benefit-item">
+          <i class="fas fa-check-circle"></i>
+          <span>Soporte 24/7 incluido</span>
+        </div>
+      </div>
+
+      <div class="cta-final-buttons">
+  <a href="planes.html" class="btn-cta-mega">
+    <span class="btn-mega-icon"><i class="fas fa-rocket"></i></span>
+    <span class="btn-mega-text">
+      <strong>Prueba Gratis 30 Días</strong>
+      <small>No se requiere tarjeta</small>
+    </span>
+  </a>
+  
+  <a href="contacto.html" class="btn-cta-mega">
+    <span class="btn-mega-icon"><i class="fas fa-calendar-alt"></i></span>
+    <span class="btn-mega-text">
+      <strong>Agendar Demo Personalizada</strong>
+      <small>Con un experto en vivo</small>
+    </span>
+  </a>
+</div>
+
+
+      <div class="trust-badges">
+        <div class="trust-item">
+          <i class="fas fa-shield-alt"></i>
+          <span>Certificado ISO 27001</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-star"></i>
+          <span>4.9/5 en Trustpilot</span>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-lock"></i>
+          <span>Pago 100% Seguro</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 
 <footer class="site-footer">
@@ -233,10 +491,145 @@
     </div>
   </div>
 </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+          <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const scrollBtn = document.querySelector(".hero-scroll");
+
+            scrollBtn.addEventListener("click", () => {
+              const nextSection = document.querySelector(".features-section");
+              if (nextSection) {
+                nextSection.scrollIntoView({ behavior: "smooth" });
+              }
+            });
+          });
+          </script>
+
+
+          <script>
+            const video = document.getElementById('demoVideo');
+            const playBtn = document.getElementById('playButton');
+
+            playBtn.addEventListener('click', () => {
+              video.setAttribute('controls', 'true');
+              video.play();
+              playBtn.classList.add('fade-out');
+            });
+
+            video.addEventListener('pause', () => {
+              playBtn.classList.remove('fade-out');
+            });
+          </script>
+          </body>
+          </html>
+
+
+          <script>
+          (() => {
+            const canvas = document.getElementById("heroCanvas3D");
+            if (!canvas) return;
+
+            const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 8;
+
+            const ambient = new THREE.AmbientLight(0x168c8c, 0.4);
+            const softLight = new THREE.PointLight(0x83c5be, 1.2, 100);
+            softLight.position.set(5, 5, 10);
+            scene.add(ambient, softLight);
+
+            const count = 400;
+            const positions = new Float32Array(count * 3);
+            for (let i = 0; i < count * 3; i++) positions[i] = (Math.random() - 0.5) * 20;
+
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+
+            const material = new THREE.PointsMaterial({
+              color: 0x168c8c,
+              size: 0.08,
+              transparent: true,
+              opacity: 0.6,
+              blending: THREE.AdditiveBlending,
+            });
+
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener("mousemove", (e) => {
+              mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+              mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            });
+
+            const clock = new THREE.Clock();
+            function animate() {
+              const t = clock.getElapsedTime();
+              points.rotation.y = t * 0.02;
+              points.rotation.x = Math.sin(t * 0.05) * 0.1;
+
+              camera.position.x += (mouseX * 2 - camera.position.x) * 0.03;
+              camera.position.y += (-mouseY * 1.5 - camera.position.y) * 0.03;
+
+              renderer.render(scene, camera);
+              requestAnimationFrame(animate);
+            }
+            animate();
+
+            window.addEventListener("resize", () => {
+              renderer.setSize(window.innerWidth, window.innerHeight);
+              camera.aspect = window.innerWidth / window.innerHeight;
+              camera.updateProjectionMatrix();
+            });
+          })();
+          </script>
+
+          <script>
+          document.addEventListener("DOMContentLoaded", () => {
+            const counters = document.querySelectorAll(".stat-number");
+            const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+            function animateCounter(el, target, suffix = "") {
+              const start = 0;
+              const duration = 7000;
+              const startTime = performance.now();
+
+              function update(time) {
+                const progress = Math.min((time - startTime) / duration, 1);
+                const eased = easeOut(progress);
+                const value = start + (target - start) * eased;
+                el.textContent =
+                  (target % 1 === 0 ? Math.floor(value).toLocaleString() : value.toFixed(1)) +
+                  suffix;
+                if (progress < 1) requestAnimationFrame(update);
+              }
+              requestAnimationFrame(update);
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting && !entry.target.classList.contains("counted")) {
+                  entry.target.classList.add("counted");
+                  let suffix = "";
+                  if (entry.target.dataset.target >= 10000) suffix = "K+";
+                  if (entry.target.dataset.target == 99.9) suffix = "%";
+                  if (entry.target.dataset.target == 24) suffix = "/7";
+                  animateCounter(entry.target, parseFloat(entry.target.dataset.target), suffix);
+                }
+              });
+            });
+
+            counters.forEach((counter) => observer.observe(counter));
+          });
+          </script>
+
+
+
 </body>
 </html>
-
-
- 

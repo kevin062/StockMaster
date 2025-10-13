@@ -1,0 +1,201 @@
+-- ============================================
+-- BASE DE DATOS: StockMaster
+-- ============================================
+CREATE DATABASE IF NOT EXISTS stockmaster;
+USE stockmaster;
+
+-- ============================================
+-- TABLA: productos
+-- ============================================
+CREATE TABLE IF NOT EXISTS productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(50) NOT NULL UNIQUE,
+    nombre VARCHAR(200) NOT NULL,
+    descripcion TEXT,
+    categoria VARCHAR(100) NOT NULL,
+    proveedor VARCHAR(100) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT NOT NULL DEFAULT 0,
+    ubicacion VARCHAR(100),
+    estado ENUM('disponible', 'en_reposicion', 'agotado', 'descontinuado', 'reservado', 'danado', 'en_transito') NOT NULL DEFAULT 'disponible',
+    sku VARCHAR(100),
+    fecha_ingreso DATE,
+    fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    fecha_inventario DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    INDEX idx_codigo (codigo),
+    INDEX idx_nombre (nombre),
+    INDEX idx_categoria (categoria),
+    INDEX idx_estado (estado)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- TABLA: ventas
+-- ============================================
+CREATE TABLE IF NOT EXISTS ventas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idproducto INT NOT NULL,
+    nombreproducto VARCHAR(200) NOT NULL,
+    cantidadvendida INT NOT NULL,
+    preciounitario DECIMAL(10, 2) NOT NULL,
+    totalventa DECIMAL(10, 2) NOT NULL,
+    metodopago ENUM('efectivo', 'tarjetacredito', 'tarjetadebito', 'transferencia') NOT NULL,
+    vendedor VARCHAR(100) NOT NULL,
+    fecha_venta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (idproducto) REFERENCES productos(id) ON DELETE RESTRICT,
+    INDEX idx_fecha_venta (fecha_venta),
+    INDEX idx_producto (idproducto)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- TABLA: movimientos_inventario
+-- ============================================
+CREATE TABLE IF NOT EXISTS movimientos_inventario (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto_id INT NOT NULL,
+    tipo_movimiento ENUM('incremento', 'decremento', 'ajuste', 'venta', 'devolucion') NOT NULL,
+    cantidad INT NOT NULL,
+    stock_antes INT NOT NULL,
+    stock_despues INT NOT NULL,
+    motivo VARCHAR(255),
+    usuario VARCHAR(100),
+    fecha_movimiento TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+    INDEX idx_producto (producto_id),
+    INDEX idx_fecha (fecha_movimiento),
+    INDEX idx_tipo (tipo_movimiento)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- TABLA: alertas_stock
+-- ============================================
+CREATE TABLE IF NOT EXISTS alertas_stock (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    producto_id INT NOT NULL,
+    nivel_minimo INT NOT NULL DEFAULT 10,
+    nivel_actual INT NOT NULL,
+    alerta_activa BOOLEAN DEFAULT TRUE,
+    fecha_alerta TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (producto_id) REFERENCES productos(id) ON DELETE CASCADE,
+    INDEX idx_producto (producto_id),
+    INDEX idx_activa (alerta_activa)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- TABLA: usuarios
+-- ============================================
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    nombre_completo VARCHAR(150) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    rol ENUM('admin', 'vendedor', 'almacenista') NOT NULL DEFAULT 'vendedor',
+    activo BOOLEAN DEFAULT TRUE,
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ultimo_acceso TIMESTAMP NULL,
+    INDEX idx_username (username),
+    INDEX idx_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- 🆕 TABLA: logs_ingresos
+-- ============================================
+CREATE TABLE IF NOT EXISTS logs_ingresos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    usuario VARCHAR(100),
+    ip_address VARCHAR(50),
+    fecha_ingreso TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    estado ENUM('exitoso', 'fallido') NOT NULL,
+    mensaje TEXT
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- TRIGGER: Actualizar stock después de venta
+-- ============================================
+DELIMITER $$
+CREATE TRIGGER after_venta_insert
+AFTER INSERT ON ventas
+FOR EACH ROW
+BEGIN
+    DECLARE stock_actual INT;
+    SELECT stock INTO stock_actual FROM productos WHERE id = NEW.idproducto;
+    UPDATE productos SET stock = stock - NEW.cantidadvendida WHERE id = NEW.idproducto;
+
+    INSERT INTO movimientos_inventario (
+        producto_id, tipo_movimiento, cantidad, stock_antes, stock_despues, motivo, usuario
+    ) VALUES (
+        NEW.idproducto, 'venta', NEW.cantidadvendida, stock_actual,
+        stock_actual - NEW.cantidadvendida, CONCAT('Venta registrada - ', NEW.metodopago), NEW.vendedor
+    );
+
+    IF (stock_actual - NEW.cantidadvendida) < 10 THEN
+        INSERT INTO alertas_stock (producto_id, nivel_actual)
+        VALUES (NEW.idproducto, stock_actual - NEW.cantidadvendida)
+        ON DUPLICATE KEY UPDATE nivel_actual = stock_actual - NEW.cantidadvendida,
+        alerta_activa = TRUE, fecha_alerta = CURRENT_TIMESTAMP;
+    END IF;
+END$$
+DELIMITER ;
+
+-- ============================================
+-- DATOS DE EJEMPLO
+-- ============================================
+INSERT INTO usuarios (username, password, nombre_completo, email, rol) VALUES
+('admin', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Administrador Sistema', 'admin@stockmaster.com', 'admin'),
+('vendedor1', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Juan Pérez', 'juan@stockmaster.com', 'vendedor');
+
+
+-- ============================================
+-- 🔧 AJUSTE DE TABLA USUARIOS
+-- ============================================
+
+-- 1️⃣ Renombrar columnas si existen
+-- (usa IGNORE para evitar error si ya están renombradas)
+ALTER TABLE usuarios 
+    CHANGE COLUMN `username` `usuario` VARCHAR(50) NOT NULL UNIQUE,
+    CHANGE COLUMN `password` `contrasena` VARCHAR(255) NOT NULL;
+
+-- 2️⃣ Agregar columnas que falten manualmente
+-- (usa DROP COLUMN ... ADD si ya existen con otro nombre)
+-- Aquí asumimos que las columnas ya existen, así que NO las recreamos
+
+-- 3️⃣ Eliminar índice antiguo (si existe)
+DROP INDEX idx_username ON usuarios;
+
+-- 4️⃣ Crear índices correctos
+CREATE INDEX idx_usuario ON usuarios(usuario);
+CREATE INDEX idx_email ON usuarios(email);
+
+-- ============================================
+-- 🔧 AJUSTE TABLA LOGS_INGRESOS
+-- ============================================
+ALTER TABLE logs_ingresos 
+    MODIFY COLUMN usuario VARCHAR(100),
+    MODIFY COLUMN ip_address VARCHAR(50),
+    MODIFY COLUMN estado ENUM('exitoso', 'fallido') NOT NULL,
+    MODIFY COLUMN mensaje TEXT;
+DESCRIBE usuarios;
+SHOW INDEXES FROM usuarios;
+DELETE FROM usuarios WHERE email = 'juan@stockmaster.com';
+
+USE stockmaster;
+-- Cifrar la contraseña de 'admin'
+UPDATE usuarios 
+SET contrasena = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+WHERE usuario = 'admin';
+
+-- Cifrar la contraseña de 'vendedor'
+UPDATE usuarios 
+SET contrasena = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'
+WHERE usuario = 'vendedor';
+
+INSERT INTO usuarios (usuario, contrasena, nombre_completo, email, rol, activo)
+VALUES (
+  'vendedor',
+  '12345', -- Contraseña: 12345
+  'Juan Pérez',
+  'juan@stockmaster.com',
+  'vendedor',
+  1
+);

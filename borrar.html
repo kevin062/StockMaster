@@ -11,31 +11,10 @@
 </head>
 <body class="delete-body">
 
-  <header>
-    <h1><a href="index 1.html" style="color: white; text-decoration: none;">StockMaster</a></h1>
-  </header>
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <h3><i class="fas fa-box"></i> StockMaster</h3>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+ <header style="display: flex; justify-content: center; align-items: center; height: 100px; background: rgb(22, 140, 140);">
+  <h1><a href="index.html" style="color: white; text-decoration: none;">StockMaster</a></h1>
+</header>
 
-      <div class="collapse navbar-collapse" id="menuPrincipal">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <a href="login.html" class="boton-volver">Volver</a>
-          <li class="nav-item"><a class="nav-link" href="agregar.html"><i class="fas fa-plus-circle me-1"></i> Agregar producto</a></li>
-          <li class="nav-item"><a class="nav-link" href="consultar.html"><i class="fas fa-search me-1"></i> Consultar producto</a></li>
-          <li class="nav-item"><a class="nav-link" href="actualizar.html"><i class="fas fa-sync-alt me-1"></i> Actualizar producto</a></li>
-          <li class="nav-item"><a class="nav-link" href="gestionar.html"><i class="fas fa-warehouse me-1"></i> Gestionar inventario</a></li>
-          <li class="nav-item"><a class="nav-link" href="registrar.html"><i class="fas fa-cash-register me-1"></i> Registrar venta</a></li>
-          <li class="nav-item"><a class="nav-link" href="borrar.html"><i class="fas fa-trash-alt me-1"></i> Borrar producto</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
 
   <div class="delete-container">
@@ -124,11 +103,43 @@
     if (referrer && referrer !== window.location.href) {
       window.location.href = referrer;
     } else {
-      window.location.href = "index 1.html";
+      window.location.href = "index.html";
     }
   }
 </script>
-  
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("formEliminar");
+  const mensaje = document.querySelector(".delete-message");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const confirm = document.getElementById("confirmDelete");
+    if (!confirm.checked) {
+      mensaje.innerHTML = `<div class="alert alert-warning">Debes confirmar la eliminación marcando la casilla.</div>`;
+      return;
+    }
+
+    const formData = new FormData(form);
+
+    const response = await fetch("eliminar_producto.php", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      mensaje.innerHTML = `<div class="alert alert-success">${data.message}</div>`;
+      form.reset();
+    } else {
+      mensaje.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+    }
+  });
+});
+</script>
+
   
 </body>
 </html>

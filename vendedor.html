@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Vendedor | StockMaster</title>
+    <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="welcome-modal-seller" id="welcomeModal">
+        <div class="welcome-modal-content-seller">
+            <div class="welcome-icon-container-seller">
+                <div class="welcome-icon-circle-seller">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="welcome-particles-seller">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <h1 class="welcome-title-seller">
+                ¡Bienvenido de Nuevo!
+            </h1>
+            
+            <p class="welcome-subtitle-seller">
+                Panel de Ventas - StockMaster
+            </p>
+            
+            <div class="welcome-stats-seller">
+                <div class="welcome-stat-seller">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="stat-number-seller">34</span>
+                    <span class="stat-label-seller">Ventas Hoy</span>
+                </div>
+                <div class="welcome-stat-seller">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span class="stat-number-seller">$18.5K</span>
+                    <span class="stat-label-seller">Total Vendido</span>
+                </div>
+                <div class="welcome-stat-seller">
+                    <i class="fas fa-star"></i>
+                    <span class="stat-number-seller">4.9</span>
+                    <span class="stat-label-seller">Calificación</span>
+                </div>
+            </div>
+
+            <div class="welcome-message-seller">
+                <i class="fas fa-briefcase"></i>
+                <p>Tienes acceso a las herramientas de ventas e inventario</p>
+            </div>
+
+            <button class="welcome-btn-seller" onclick="closeWelcomeModal()">
+                <span>Comenzar a Trabajar</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <div class="welcome-footer-seller">
+                <span>Turno: 09:00 AM - 05:00 PM | Última sesión: Hace 2 horas</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container-seller" id="dashboardContainer">
+        <aside class="dashboard-sidebar-seller">
+            <div class="sidebar-header-seller">
+                <div class="logo-container-seller">
+                    <i class="fas fa-box-open"></i>
+                    <span>StockMaster</span>
+                </div>
+                <span class="seller-badge">VENDEDOR</span>
+            </div>
+
+            <div class="user-profile-seller">
+                <div class="user-avatar-seller">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div class="user-info-seller">
+                    <h3>Juan Pérez</h3>
+                    <p>Vendedor Senior</p>
+                </div>
+                <div class="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Activo</span>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav-seller">
+                <a href="#" class="nav-item-seller active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Panel Principal</span>
+                </a>
+                <div class="nav-divider-seller"></div>
+                <span class="nav-title-seller">HERRAMIENTAS</span>
+                <a href="#" class="nav-item-seller">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Mis Ventas</span>
+                    <span class="nav-badge">34</span>
+                </a>
+                <a href="#" class="nav-item-seller">
+                    <i class="fas fa-box"></i>
+                    <span>Inventario Disponible</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer-seller">
+                <div class="shift-info">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <span class="shift-label">Turno Actual</span>
+                        <span class="shift-time">09:00 AM - 05:00 PM</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="dashboard-main-seller">
+            <header class="dashboard-header-seller">
+                <div class="header-left-seller">
+                    <h1>Panel de Ventas</h1>
+                    <p>Gestiona ventas y consulta el inventario</p>
+                </div>
+                <div class="header-right-seller">
+                    <button class="header-btn-seller">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge-seller">2</span>
+                    </button>
+                    <button class="header-btn-seller">
+                        <i class="fas fa-question-circle"></i>
+                    </button>
+                    <button class="header-btn-seller logout-btn-seller">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="quick-stats-seller">
+                <div class="quick-stat-card-seller">
+                    <div class="stat-icon-seller stat-icon-green-seller">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-info-seller">
+                        <span class="stat-value-seller">34</span>
+                        <span class="stat-label-seller">Ventas Hoy</span>
+                    </div>
+                    <div class="stat-change-seller positive">
+                        <i class="fas fa-arrow-up"></i> +8
+                    </div>
+                </div>
+
+                <div class="quick-stat-card-seller">
+                    <div class="stat-icon-seller stat-icon-blue-seller">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-info-seller">
+                        <span class="stat-value-seller">$18.5K</span>
+                        <span class="stat-label-seller">Total Vendido</span>
+                    </div>
+                    <div class="stat-change-seller positive">
+                        <i class="fas fa-arrow-up"></i> +15%
+                    </div>
+                </div>
+
+                <div class="quick-stat-card-seller">
+                    <div class="stat-icon-seller stat-icon-purple-seller">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="stat-info-seller">
+                        <span class="stat-value-seller">1,247</span>
+                        <span class="stat-label-seller">Productos Disponibles</span>
+                    </div>
+                    <div class="stat-change-seller neutral">
+                        <i class="fas fa-check"></i> OK
+                    </div>
+                </div>
+
+                <div class="quick-stat-card-seller">
+                    <div class="stat-icon-seller stat-icon-orange-seller">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info-seller">
+                        <span class="stat-value-seller">5h 30m</span>
+                        <span class="stat-label-seller">Tiempo Trabajado</span>
+                    </div>
+                    <div class="stat-change-seller neutral">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header-seller">
+                <h2>Herramientas Disponibles</h2>
+                <p>Funciones autorizadas para tu rol</p>
+            </div>
+
+            <div class="modules-grid-seller">
+                <a href="consultar.html" class="module-card-seller module-search-seller">
+                    <div class="module-badge-full">
+                        <i class="fas fa-unlock"></i>
+                        <span>ACCESO COMPLETO</span>
+                    </div>
+                    <div class="module-icon-wrapper-seller">
+                        <div class="module-icon-seller">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="module-glow-seller"></div>
+                    </div>
+                    <div class="module-content-seller">
+                        <h3>Consultar Producto</h3>
+                        <p>Busca y visualiza información completa de productos, precios y disponibilidad</p>
+                        <ul class="module-features-seller">
+                            <li><i class="fas fa-check-circle"></i> Búsqueda avanzada</li>
+                            <li><i class="fas fa-check-circle"></i> Ver precios y stock</li>
+                            <li><i class="fas fa-check-circle"></i> Filtros múltiples</li>
+                            <li><i class="fas fa-check-circle"></i> Exportar listados</li>
+                        </ul>
+                    </div>
+                    <div class="module-action-seller">
+                        <span>Acceder ahora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="registrar.html" class="module-card-seller module-sale-seller">
+                    <div class="module-badge-full">
+                        <i class="fas fa-unlock"></i>
+                        <span>ACCESO COMPLETO</span>
+                    </div>
+                    <div class="module-icon-wrapper-seller">
+                        <div class="module-icon-seller">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <div class="module-glow-seller"></div>
+                    </div>
+                    <div class="module-content-seller">
+                        <h3>Registrar Venta</h3>
+                        <p>Procesa ventas rápidamente con actualización automática del inventario</p>
+                        <ul class="module-features-seller">
+                            <li><i class="fas fa-check-circle"></i> Venta rápida</li>
+                            <li><i class="fas fa-check-circle"></i> Múltiples pagos</li>
+                            <li><i class="fas fa-check-circle"></i> Facturación automática</li>
+                            <li><i class="fas fa-check-circle"></i> Descuentos permitidos</li>
+                        </ul>
+                    </div>
+                    <div class="module-action-seller">
+                        <span>Acceder ahora</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="actualizar.html" class="module-card-seller module-update-seller">
+                    <div class="module-badge-partial">
+                        <i class="fas fa-lock-open"></i>
+                        <span>ACCESO PARCIAL</span>
+                    </div>
+                    <div class="module-icon-wrapper-seller">
+                        <div class="module-icon-seller">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="module-glow-seller"></div>
+                    </div>
+                    <div class="module-content-seller">
+                        <h3>Actualizar Producto</h3>
+                        <p>Modifica únicamente el stock y estado de disponibilidad de productos</p>
+                        <ul class="module-features-seller">
+                            <li><i class="fas fa-check-circle"></i> Ajustar stock</li>
+                            <li><i class="fas fa-check-circle"></i> Marcar agotado</li>
+                            <li><i class="fas fa-times-circle text-muted"></i> <span class="text-muted">Cambiar precios</span></li>
+                            <li><i class="fas fa-times-circle text-muted"></i> <span class="text-muted">Editar información</span></li>
+                        </ul>
+                    </div>
+                    <div class="module-action-seller">
+                        <span>Acceso limitado</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="gestionar.html" class="module-card-seller module-manage-seller">
+                    <div class="module-badge-readonly">
+                        <i class="fas fa-eye"></i>
+                        <span>SOLO LECTURA</span>
+                    </div>
+                    <div class="module-icon-wrapper-seller">
+                        <div class="module-icon-seller">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="module-glow-seller"></div>
+                    </div>
+                    <div class="module-content-seller">
+                        <h3>Gestionar Inventario</h3>
+                        <p>Visualiza el stock y ubicación de productos sin capacidad de edición</p>
+                        <ul class="module-features-seller">
+                            <li><i class="fas fa-check-circle"></i> Ver stock actual</li>
+                            <li><i class="fas fa-check-circle"></i> Ver ubicaciones</li>
+                            <li><i class="fas fa-check-circle"></i> Ver historial</li>
+                            <li><i class="fas fa-times-circle text-muted"></i> <span class="text-muted">No puedes editar</span></li>
+                        </ul>
+                    </div>
+                    <div class="module-action-seller">
+                        <span>Ver inventario</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="section-header-seller" style="margin-top: 60px;">
+                <h2>Mis Ventas Recientes</h2>
+                <p>Últimas transacciones realizadas</p>
+            </div>
+
+            <div class="sales-container-seller">
+                <div class="sale-item-seller">
+                    <div class="sale-icon-seller sale-success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="sale-content-seller">
+                        <h4>Venta #VT-2547</h4>
+                        <p>Arroz Diana 500g x3, Leche Alpina x2 - Efectivo</p>
+                    </div>
+                    <div class="sale-amount-seller">$15,800</div>
+                    <span class="sale-time-seller">Hace 8 min</span>
+                </div>
+
+                <div class="sale-item-seller">
+                    <div class="sale-icon-seller sale-success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="sale-content-seller">
+                        <h4>Venta #VT-2546</h4>
+                        <p>Aceite Girasol x1, Jabón Protex x4 - Tarjeta</p>
+                    </div>
+                    <div class="sale-amount-seller">$19,700</div>
+                    <span class="sale-time-seller">Hace 23 min</span>
+                </div>
+
+                <div class="sale-item-seller">
+                    <div class="sale-icon-seller sale-success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="sale-content-seller">
+                        <h4>Venta #VT-2545</h4>
+                        <p>Gaseosa Postobón x6 - Transferencia</p>
+                    </div>
+                    <div class="sale-amount-seller">$25,200</div>
+                    <span class="sale-time-seller">Hace 41 min</span>
+                </div>
+
+                <div class="sale-item-seller">
+                    <div class="sale-icon-seller sale-success">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="sale-content-seller">
+                        <h4>Venta #VT-2544</h4>
+                        <p>Productos varios (8 items) - Efectivo</p>
+                    </div>
+                    <div class="sale-amount-seller">$43,500</div>
+                    <span class="sale-time-seller">Hace 1 hora</span>
+                </div>
+            </div>
+
+            <div class="alerts-seller">
+                <div class="alert-card-seller alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <strong>Productos con stock bajo</strong>
+                        <p>23 productos necesitan reabastecimiento pronto</p>
+                    </div>
+                </div>
+                <div class="alert-card-seller alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    <div>
+                        <strong>Meta de ventas</strong>
+                        <p>Llevas $18.5K de $25K - ¡Vas muy bien! (74%)</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            const dashboard = document.getElementById('dashboardContainer');
+            
+            modal.style.animation = 'modalFadeOut 0.5s ease-out forwards';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                dashboard.style.display = 'flex';
+                dashboard.style.animation = 'dashboardFadeIn 0.8s ease-out';
+            }, 500);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | StockMaster</title>
+    <link rel="icon" type="image/png" href="iconoyloginIMG/Icono.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="welcome-modal" id="welcomeModal">
+        <div class="welcome-modal-content">
+            <div class="welcome-icon-container">
+                <div class="welcome-icon-circle">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <div class="welcome-particles">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <h1 class="welcome-title">
+                ¡Bienvenido, Administrador!
+            </h1>
+            
+            <p class="welcome-subtitle">
+                Panel de Control Premium de StockMaster
+            </p>
+            
+            <div class="welcome-stats">
+                <div class="welcome-stat">
+                    <i class="fas fa-box"></i>
+                    <span class="stat-number">1,247</span>
+                    <span class="stat-label">Productos</span>
+                </div>
+                <div class="welcome-stat">
+                    <i class="fas fa-chart-line"></i>
+                    <span class="stat-number">89.5%</span>
+                    <span class="stat-label">Stock</span>
+                </div>
+                <div class="welcome-stat">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span class="stat-number">$45.2K</span>
+                    <span class="stat-label">Ventas Hoy</span>
+                </div>
+            </div>
+
+            <div class="welcome-message">
+                <i class="fas fa-info-circle"></i>
+                <p>Tienes acceso completo a todas las funciones del sistema</p>
+            </div>
+
+            <button class="welcome-btn" onclick="closeWelcomeModal()">
+                <span>Acceder al Panel</span>
+                <i class="fas fa-arrow-right"></i>
+            </button>
+
+            <div class="welcome-footer">
+                <span>Última sesión: Hoy a las 09:30 AM</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="dashboard-container" id="dashboardContainer">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <i class="fas fa-box-open"></i>
+                    <span>StockMaster</span>
+                </div>
+                <span class="admin-badge">ADMIN</span>
+            </div>
+
+            <div class="user-profile">
+                <div class="user-avatar">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="user-info">
+                    <h3>Administrador</h3>
+                    <p>Super Usuario</p>
+                </div>
+            </div>
+
+          
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="header-left">
+                    <h1>Panel de Control</h1>
+                    <p>Gestiona tu inventario de manera profesional</p>
+                </div>
+                <div class="header-right">
+                    <button class="header-btn">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
+                    <button class="header-btn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="header-btn logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-blue">
+                        <i class="fas fa-boxes"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">1,247</span>
+                        <span class="stat-label">Total Productos</span>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 12%
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-green">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">$125.8K</span>
+                        <span class="stat-label">Ventas del Mes</span>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 8.5%
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-orange">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">23</span>
+                        <span class="stat-label">Stock Bajo</span>
+                    </div>
+                    <div class="stat-change negative">
+                        <i class="fas fa-arrow-down"></i> 3
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon stat-icon-purple">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-value">156</span>
+                        <span class="stat-label">Transacciones Hoy</span>
+                    </div>
+                    <div class="stat-change positive">
+                        <i class="fas fa-arrow-up"></i> 24
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-header">
+                <h2>Módulos de Gestión</h2>
+                <p>Acceso rápido a todas las funcionalidades</p>
+            </div>
+
+            <div class="modules-grid">
+                <a href="agregar.html" class="module-card module-add">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-plus-circle"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Agregar Producto</h3>
+                        <p>Registra nuevos productos en el inventario con toda la información detallada</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Formulario completo</li>
+                            <li><i class="fas fa-check"></i> Validación automática</li>
+                            <li><i class="fas fa-check"></i> Categorización inteligente</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="consultar.html" class="module-card module-search">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Consultar Producto</h3>
+                        <p>Busca y visualiza información detallada de cualquier producto del inventario</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Búsqueda avanzada</li>
+                            <li><i class="fas fa-check"></i> Filtros múltiples</li>
+                            <li><i class="fas fa-check"></i> Vista detallada</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="actualizar.html" class="module-card module-update">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Actualizar Producto</h3>
+                        <p>Modifica la información de productos existentes de forma rápida y segura</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Edición en tiempo real</li>
+                            <li><i class="fas fa-check"></i> Historial de cambios</li>
+                            <li><i class="fas fa-check"></i> Respaldo automático</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="gestionar.html" class="module-card module-manage">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Gestionar Inventario</h3>
+                        <p>Control total del stock con alertas inteligentes y reportes detallados</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Control de stock</li>
+                            <li><i class="fas fa-check"></i> Alertas automáticas</li>
+                            <li><i class="fas fa-check"></i> Movimientos registrados</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="registrar.html" class="module-card module-sale">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-cash-register"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Registrar Venta</h3>
+                        <p>Procesa ventas rápidamente con actualización automática del inventario</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Proceso rápido</li>
+                            <li><i class="fas fa-check"></i> Múltiples métodos de pago</li>
+                            <li><i class="fas fa-check"></i> Cálculo automático</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+
+                <a href="borrar.html" class="module-card module-delete">
+                    <div class="module-icon-wrapper">
+                        <div class="module-icon">
+                            <i class="fas fa-trash-alt"></i>
+                        </div>
+                        <div class="module-glow"></div>
+                    </div>
+                    <div class="module-content">
+                        <h3>Borrar Producto</h3>
+                        <p>Elimina productos del sistema con confirmación de seguridad y respaldo</p>
+                        <ul class="module-features">
+                            <li><i class="fas fa-check"></i> Confirmación doble</li>
+                            <li><i class="fas fa-check"></i> Respaldo de datos</li>
+                            <li><i class="fas fa-check"></i> Registro de eliminación</li>
+                        </ul>
+                    </div>
+                    <div class="module-action">
+                        <span>Ir al módulo</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+
+            <div class="section-header" style="margin-top: 60px;">
+                <h2>Actividad Reciente</h2>
+                <p>Últimas acciones en el sistema</p>
+            </div>
+
+            <div class="activity-container">
+                <div class="activity-item">
+                    <div class="activity-icon activity-icon-add">
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Producto agregado</h4>
+                        <p>Arroz Diana 500g - Stock inicial: 150 unidades</p>
+                    </div>
+                    <span class="activity-time">Hace 5 min</span>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon activity-icon-sale">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Venta registrada</h4>
+                        <p>3 productos vendidos - Total: $12,500 COP</p>
+                    </div>
+                    <span class="activity-time">Hace 12 min</span>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon activity-icon-update">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Inventario actualizado</h4>
+                        <p>Stock de Leche Alpina modificado: 80 → 120 unidades</p>
+                    </div>
+                    <span class="activity-time">Hace 28 min</span>
+                </div>
+
+                <div class="activity-item">
+                    <div class="activity-icon activity-icon-alert">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <h4>Alerta de stock bajo</h4>
+                        <p>Jabón Protex - Solo quedan 5 unidades</p>
+                    </div>
+                    <span class="activity-time">Hace 1 hora</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function closeWelcomeModal() {
+            const modal = document.getElementById('welcomeModal');
+            const dashboard = document.getElementById('dashboardContainer');
+            
+            modal.style.animation = 'modalFadeOut 0.5s ease-out forwards';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                dashboard.style.display = 'flex';
+                dashboard.style.animation = 'dashboardFadeIn 0.8s ease-out';
+            }, 500);
+        }
+
+    </script>
+</body>
+</html>
